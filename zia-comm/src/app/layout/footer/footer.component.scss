@@ -1,0 +1,157 @@
+.footer {
+  background-color: #0f0f0f; /* deep dark */
+  color: #b0b0b0;
+  padding: 2rem 1.5rem;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  position: fixed; /* Changed to fixed to stick to the bottom */
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  z-index: 1000; /* Ensure it's above other content if needed */
+  box-sizing: border-box; /* To include padding in width */
+}
+
+/* Subtle overlay */
+.footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 215, 0, 0.05),
+    rgba(255, 255, 255, 0.02)
+  );
+  pointer-events: none;
+}
+
+/* Layout */
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+/* Brand */
+.footer-logo {
+  width: 120px;
+  margin-bottom: 1rem;
+  filter: invert(1) hue-rotate(180deg); /* Inverts black to white while preserving yellow */
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+.footer-logo:hover {
+  transform: scale(1.05); /* Subtle professional scale */
+  filter: invert(1) hue-rotate(180deg) brightness(1.1); /* Slight glow effect */
+}
+.footer-tagline {
+  font-size: 0.9rem;
+  color: #ccc;
+  max-width: 280px;
+  line-height: 1.5;
+}
+
+/* Navigation */
+.footer-nav h4 {
+  color: #ffd700;
+  margin-bottom: 0.8rem;
+  font-size: 1.1rem;
+}
+.footer-nav ul {
+  list-style: none;
+  padding: 0;
+}
+.footer-nav li {
+  margin: 1rem 0; /* Increased spacing between links for PC */
+}
+.footer-nav a {
+  color: #ddd;
+  font-size: 1rem;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+.footer-nav a:hover {
+  color: #ffd700;
+  transform: translateY(-2px); /* Subtle lift for professional hover */
+}
+.footer-nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: #ffd700;
+  transition: width 0.3s ease;
+}
+.footer-nav a:hover::after {
+  width: 100%; /* Smooth underline animation */
+}
+
+/* Social */
+.footer-social h4 {
+  color: #ffd700;
+  margin-bottom: 0.8rem;
+  font-size: 1.1rem;
+}
+.social-links {
+  display: flex;
+  gap: 1rem;
+}
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(255, 215, 0, 0.4);
+  border-radius: 50%;
+  font-size: 1.1rem;
+  color: #ddd;
+  transition: color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+}
+.social-links a:hover {
+  color: #ffd700;
+  transform: scale(1.1); /* Subtle scale for professional hover */
+  border-color: rgba(255, 215, 0, 0.8); /* Border glow effect */
+}
+
+/* Bottom bar */
+.footer-bottom {
+  text-align: center;
+  margin-top: 1.5rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid rgba(255, 215, 0, 0.2);
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2.5rem; /* extra spacing between sections */
+  }
+  .footer-logo {
+    margin-bottom: 1.5rem;
+  }
+  .footer-nav li {
+    margin: 1.2rem 0; /* Further increased spacing between links for mobile */
+  }
+  .footer-nav a {
+    font-size: 1.1rem;
+    padding: 0.6rem 0;
+  }
+  .social-links {
+    justify-content: center;
+    gap: 1.5rem; /* more spacing between icons */
+  }
+  .social-links a {
+    width: 48px; /* reduced size for mobile */
+    height: 48px;
+    font-size: 1.3rem;
+  }
+}

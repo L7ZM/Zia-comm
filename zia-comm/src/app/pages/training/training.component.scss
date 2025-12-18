@@ -1,0 +1,49 @@
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+
+  h1 {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .service, .training-content, .contact-wrapper {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 18px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+  }
+
+  ul {
+    padding-left: 1.5rem;
+    li {
+      margin-bottom: 0.6rem;
+    }
+  }
+
+  .cta {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.9rem 2rem;
+    background: var(--accent, #0078ff);
+    color: #fff;
+    border-radius: 50px;
+    font-weight: 500;
+    transition: all 0.3s;
+
+    &:hover {
+      background: #0056b3;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding: 3rem 1.5rem;
+  }
+}
