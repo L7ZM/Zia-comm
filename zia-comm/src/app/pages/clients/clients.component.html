@@ -1,0 +1,14 @@
+<!-- clients.component.html -->
+<section class="clients-section">
+  <div class="clients-header">
+    <h2>Nos Clients</h2>
+    <p>Ils nous font confiance</p>
+  </div>
+  <div class="clients-grid">
+    <div class="client-card" *ngFor="let client of clients">
+      <img [src]="client.logo" [alt]="client.name" class="client-logo" />
+      <h3>{{ client.name }}</h3>
+      <p>{{ client.description }}</p>
+    </div>
+  </div>
+</section>

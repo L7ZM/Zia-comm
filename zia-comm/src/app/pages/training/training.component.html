@@ -1,0 +1,52 @@
+<section class="training-section">
+  <div class="training-container">
+
+    <!-- HEADER / INTRO -->
+    <div class="training-header">
+      <h2>Formation en Intelligence Artificielle</h2>
+      <p>
+        Une formation complète et pratique pour les professionnels souhaitant intégrer l’Intelligence Artificielle dans leur quotidien. Animée par <strong>Fouzia Azmi</strong>, experte en stratégie digitale, automatisation et IA, cette formation vous permet d’acquérir des compétences concrètes pour optimiser votre productivité, automatiser vos tâches répétitives et prendre de meilleures décisions grâce à la data et aux outils intelligents.
+      </p>
+    </div>
+
+    <!-- TRAINING CONTENT GRID -->
+    <div class="training-grid">
+
+      <!-- FEATURE CARDS -->
+      <div class="training-card" *ngFor="let feature of trainingFeatures">
+        <div class="icon-wrapper-training">
+          <i [class]="feature.icon"></i>
+        </div>
+        <h3>{{ feature.title }}</h3>
+        <p>{{ feature.description }}</p>
+      </div>
+
+    </div>
+
+    <!-- ADDITIONAL DETAILS -->
+    <div class="training-details-extended">
+      <h3>Ce que vous allez apprendre :</h3>
+      <ul>
+        <li><i class="fas fa-check-circle"></i> Utiliser des outils d’IA avancés pour automatiser vos tâches quotidiennes.</li>
+        <li><i class="fas fa-check-circle"></i> Optimiser la gestion de votre temps et vos processus internes.</li>
+        <li><i class="fas fa-check-circle"></i> Analyser les données pour prendre des décisions éclairées et augmenter la performance de votre entreprise.</li>
+        <li><i class="fas fa-check-circle"></i> Créer des workflows intelligents pour gagner en efficacité et réduire les erreurs.</li>
+        <li><i class="fas fa-check-circle"></i> Développer des stratégies sur mesure adaptées à votre secteur et vos objectifs commerciaux.</li>
+        <li><i class="fas fa-check-circle"></i> Déployer des outils numériques pour améliorer l’expérience client et la visibilité de votre entreprise.</li>
+        <li><i class="fas fa-check-circle"></i> Comprendre les concepts de machine learning et d’automatisation intelligente, même sans compétences techniques préalables.</li>
+      </ul>
+
+      <p>
+        Les sessions sont régulièrement organisées à <strong>Rabat</strong>, en petits groupes pour favoriser l’interaction et l’apprentissage pratique. Préinscriptions ouvertes pour les prochaines dates afin de garantir votre place.
+      </p>
+    </div>
+
+    <!-- CTA / BUTTON -->
+    <div class="training-cta">
+      <a class="btn btn-training" routerLink="/training-info">
+        Demander des informations
+      </a>
+    </div>
+
+  </div>
+</section>

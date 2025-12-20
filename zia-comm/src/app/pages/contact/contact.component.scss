@@ -1,57 +1,214 @@
-.page {
-  padding: 4rem 1.5rem;
-  max-width: 1000px;
-  margin: auto;
+// Variables (colder gold)
+$primary-color: #d4af37;
+$secondary-color: #1a1d29;
+$light-color: #f9fafb;
+$card-bg: #1a1d29;
+$card-border: rgba(212, 175, 55, 0.15);
+$border-radius: 20px;
+$transition-speed: 0.5s;
 
-  .contact-header { text-align: center; margin-bottom: 3rem; }
+// Contact Hero Section
+.contact-hero {
+  background: linear-gradient(180deg, #faf8f3 0%, #f5f1e8 50%, #faf8f3 100%);
+  padding: 6rem 1.5rem;
+  position: relative;
+  overflow: hidden;
 
-  .contact-wrapper {
-    display: grid;
-    gap: 3rem;
-
-    @media(min-width:768px){
-      grid-template-columns: 1fr 1.3fr;
-    }
+  &::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba($primary-color, 0.08), transparent 70%);
+    border-radius: 50%;
+    filter: blur(100px);
+    animation: float-slow 25s ease-in-out infinite;
   }
 
-  .contact-info {
-    background: #f7f7f7;
-    padding: 2rem;
-    border-radius: 18px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-
-    h3 { margin-bottom: 0.8rem; }
-    p { margin-bottom: 1.2rem; line-height: 1.5; }
-    ul { list-style:none; padding:0; li { margin-bottom:0.6rem; } }
+  @media (max-width: 768px) {
+    padding: 4rem 1.5rem;
   }
 
-  .contact-form {
-    background: white;
-    padding: 2rem;
-    border-radius: 18px;
-    box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+  .contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    position: relative;
+    z-index: 2;
 
-    .field { margin-bottom: 1.4rem;
-      label { font-size: 0.9rem; margin-bottom: 0.4rem; display:block; }
-      input, textarea {
-        width: 100%;
-        padding: 0.8rem 0.9rem;
-        border-radius: 10px;
-        border: 1px solid #ddd;
-        font-size: 1rem;
-        &:focus { outline:none; border-color:#007bff; }
+    .contact-header {
+      text-align: center;
+
+      h1 {
+        font-size: clamp(2rem, 4vw, 2.8rem);
+        color: $secondary-color;
+        margin-bottom: 1rem;
+        font-weight: 800;
+        position: relative;
+        display: inline-block;
+        padding-bottom: 1rem;
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 100px;
+          height: 4px;
+          background: linear-gradient(90deg, $primary-color, rgba($primary-color, 0.3));
+          border-radius: 2px;
+        }
+      }
+
+      p {
+        color: #4b5563;
+        font-size: 1.05rem;
+        line-height: 1.7;
+        max-width: 600px;
+        margin: 0 auto;
+
+        @media (max-width: 768px) {
+          font-size: 1rem;
+        }
       }
     }
 
-    .cta {
-      margin-top: 0.5rem;
-      padding: 0.9rem 1.8rem;
-      background: #007bff;
-      color: white;
-      border-radius: 30px;
-      border: none;
-      font-weight: 500;
-      cursor: pointer;
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.5rem;
+
+      @media (min-width: 1024px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .contact-form, .contact-info {
+        background-color: $card-bg;
+        border: 1px solid $card-border;
+        border-radius: $border-radius;
+        padding: 2.5rem 2rem;
+        box-shadow: 0 25px 50px rgba(0,0,0,0.3), 0 0 40px rgba($primary-color,0.2);
+        transition: all $transition-speed cubic-bezier(0.34, 1.56, 0.64, 1);
+        text-align: center;
+
+        &:hover {
+          transform: translateY(-15px) translateZ(30px) rotateX(5deg);
+          border-color: rgba($primary-color,0.4);
+        }
+      }
+
+      .contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+
+        .form-group {
+          display: flex;
+          flex-direction: column;
+          text-align: left;
+          margin-bottom: 20px; // spacing between form groups
+
+          label {
+            margin-bottom: 16px; // increased spacing for better readability
+            font-weight: 600;
+            color: $primary-color;
+
+            @media (max-width: 768px) {
+              margin-bottom: 14px; // slightly smaller on mobile
+            }
+          }
+
+          input, textarea {
+            padding: 14px 16px; // slightly bigger padding for comfort
+            border: 1px solid rgba($primary-color, 0.2);
+            border-radius: $border-radius;
+            background-color: darken($card-bg, 2%);
+            color: $light-color;
+            font-size: 1rem;
+            transition: all $transition-speed;
+
+            &:focus {
+              border: 2px solid $primary-color;
+              outline: none;
+            }
+
+            &::placeholder {
+              color: rgba($light-color, 0.6);
+            }
+          }
+        }
+
+        .btn-primary {
+          padding: 15px;
+          background: linear-gradient(45deg, $primary-color, lighten($primary-color, 10%));
+          border: none;
+          border-radius: $border-radius;
+          color: $secondary-color;
+          font-weight: bold;
+          cursor: pointer;
+          transition: all $transition-speed;
+
+          &:hover {
+            transform: translateY(-3px);
+            background: linear-gradient(45deg, lighten($primary-color, 10%), $primary-color);
+          }
+        }
+      }
+
+      .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        h3 {
+          color: $primary-color;
+          font-size: 1.8rem;
+          margin-bottom: 25px;
+        }
+
+        .info-item {
+          display: flex;
+          align-items: center;
+          gap: 15px;
+          color: $light-color;
+
+          i {
+            font-size: 1.5rem;
+            color: $primary-color;
+          }
+        }
+
+        .info-socials {
+          display: flex;
+          gap: 20px;
+
+          a {
+            color: $primary-color;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+
+            &:hover {
+              color: lighten($primary-color, 20%);
+            }
+          }
+        }
+      }
     }
   }
+}
+
+// Float animation
+@keyframes float-slow {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-40px, -40px); }
 }

@@ -1,6 +1,4 @@
-import { Component, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
-import gsap from 'gsap';
-import * as THREE from 'three';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -9,5 +7,6 @@ import * as THREE from 'three';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-
+  heroTitle = "Bienvenue chez Zia Comm";
+  heroSubtitle = "Transformez votre performance commerciale grâce à la stratégie digitale & l'IA";
 }
