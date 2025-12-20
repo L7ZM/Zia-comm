@@ -20,7 +20,7 @@ export const appRoutes: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, {
+    RouterModule.forRoot(appRoutes, {
       useHash: true,
       scrollPositionRestoration: 'top'
     })
