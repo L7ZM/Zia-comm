@@ -8,19 +8,19 @@ import { ClientsComponent } from './pages/clients/clients.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 
-export const appRoutes: Routes = [
-  { path: '', component: HomeComponent },
+const routes: Routes = [
+  { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: 'services', component: ServicesComponent },
   { path: 'training', component: TrainingComponent },
   { path: 'clients', component: ClientsComponent },
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
-  { path: '**', redirectTo: '' }
+  { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(appRoutes, {
+    RouterModule.forRoot(routes, {
       useHash: true,
       scrollPositionRestoration: 'top'
     })
