@@ -1,11 +1,12 @@
 import { Component, AfterViewInit } from '@angular/core';
 import gsap from 'gsap';
-
+import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-about',
   standalone: true,
   templateUrl: './about.component.html',
-  styleUrls: ['./about.component.scss']
+  styleUrls: ['./about.component.scss'],
+  imports:[RouterModule]
 })
 export class AboutComponent implements AfterViewInit {
 

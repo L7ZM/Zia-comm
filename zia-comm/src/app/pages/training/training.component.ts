@@ -1,14 +1,17 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-
+import { RouterModule } from '@angular/router';
 interface Training {
   title: string;
   description: string;
 }
 
 @Component({
+  standalone:true,
   selector: 'app-training',
   templateUrl: './training.component.html',
   styleUrls: ['./training.component.scss'],
+  imports:[RouterModule,CommonModule]
 })
 export class TrainingComponent {
   trainingFeatures = [

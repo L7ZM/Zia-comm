@@ -10,6 +10,15 @@
   z-index: 1000; /* Ensure it's above other content if needed */
   box-sizing: border-box; /* To include padding in width */
 }
+.social-links a {
+  text-decoration: none;
+  color: inherit; /* keeps your icon color */
+}
+
+.social-links a:hover {
+  text-decoration: none;
+  color: #fbbf24; /* or whatever hover color you want */
+}
 
 /* Subtle overlay */
 .footer::before {
