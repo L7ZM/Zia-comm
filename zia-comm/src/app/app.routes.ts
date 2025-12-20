@@ -8,7 +8,7 @@ import { ClientsComponent } from './pages/clients/clients.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 
-export const routes: Routes = [
+export const appRoutes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: 'services', component: ServicesComponent },
   { path: 'training', component: TrainingComponent },
