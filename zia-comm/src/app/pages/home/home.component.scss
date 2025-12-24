@@ -152,7 +152,7 @@
   &::before {
     content: 'Fouzia Azmi';
     position: absolute;
-    top: -2.5rem;
+    bottom:  -2.5rem;
     left: 0;
     font-size: 1rem;
     font-weight: 600;
@@ -162,7 +162,7 @@
     z-index: 2;
 
     @media (max-width: 767px) {
-      top: -2rem;
+      bottom: -2rem;
       font-size: 0.9rem;
     }
   }
