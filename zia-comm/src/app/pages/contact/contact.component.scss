@@ -92,18 +92,19 @@ $transition-speed: 0.5s;
         gap: 2rem;
       }
 
-      .contact-form, .contact-info {
+      .contact-form,
+      .contact-info {
         background-color: $card-bg;
         border: 1px solid $card-border;
         border-radius: $border-radius;
         padding: 2.5rem 2rem;
-        box-shadow: 0 25px 50px rgba(0,0,0,0.3), 0 0 40px rgba($primary-color,0.2);
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3), 0 0 40px rgba($primary-color, 0.2);
         transition: all $transition-speed cubic-bezier(0.34, 1.56, 0.64, 1);
         text-align: center;
 
         &:hover {
           transform: translateY(-15px) translateZ(30px) rotateX(5deg);
-          border-color: rgba($primary-color,0.4);
+          border-color: rgba($primary-color, 0.4);
         }
       }
 
@@ -128,7 +129,8 @@ $transition-speed: 0.5s;
             }
           }
 
-          input, textarea {
+          input,
+          textarea {
             padding: 14px 16px; // slightly bigger padding for comfort
             border: 1px solid rgba($primary-color, 0.2);
             border-radius: $border-radius;
@@ -209,6 +211,193 @@ $transition-speed: 0.5s;
 
 // Float animation
 @keyframes float-slow {
-  0%, 100% { transform: translate(0, 0); }
-  50% { transform: translate(-40px, -40px); }
+
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(-40px, -40px);
+  }
+}
+
+
+.paper-plane-button {
+  --primary: #d4af37;
+  --primary-dark: #A67C1A;
+  --primary-darkest: #7C5E12;
+  --text: #FFFFFF;
+  --text-opacity: 1;
+  --success: #d4af37;
+  --success-opacity: 0;
+  --success-scale: 0.2;
+  --border-radius: 12;
+  --overflow: hidden;
+  --rotate: 0.2;
+  --plane-x: 0;
+  --plane-y: 0;
+  --plane-opacity: 1;
+
+  // Wing & body variables (default state)
+  --left-wing-background: var(--primary);
+  --left-wing-first-x: 0;
+  --left-wing-first-y: 0;
+  --left-wing-second-x: 50;
+  --left-wing-second-y: 0;
+  --left-wing-third-x: 0;
+  --left-wing-third-y: 100;
+
+  --left-body-background: var(--primary);
+  --left-body-first-x: 50;
+  --left-body-first-y: 0;
+  --left-body-second-x: 50;
+  --left-body-second-y: 100;
+  --left-body-third-x: 0;
+  --left-body-third-y: 100;
+
+  --right-wing-background: var(--primary);
+  --right-wing-first-x: 50;
+  --right-wing-first-y: 0;
+  --right-wing-second-x: 100;
+  --right-wing-second-y: 0;
+  --right-wing-third-x: 100;
+  --right-wing-third-y: 100;
+
+  --right-body-background: var(--primary);
+  --right-body-first-x: 50;
+  --right-body-first-y: 0;
+  --right-body-second-x: 50;
+  --right-body-second-y: 100;
+  --right-body-third-x: 100;
+  --right-body-third-y: 100;
+
+  position: relative;
+  padding: 16px 40px;
+  min-width: 160px;
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--text);
+  background: none;
+  border: none;
+  border-radius: calc(var(--border-radius) * 1px);
+  cursor: pointer;
+  overflow: var(--overflow);
+  transform: rotate(calc(var(--rotate) * 1deg));
+  font-family: inherit;
+
+  .left,
+  .right {
+    position: absolute;
+    inset: 0;
+    opacity: var(--plane-opacity);
+    transform: translate(calc(var(--plane-x) * 1px), calc(var(--plane-y) * 1px));
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: calc(var(--border-radius) * 1px);
+      clip-path: polygon(calc(var(--first-x, var(--left-wing-first-x)) * 1%) calc(var(--first-y, var(--left-wing-first-y)) * 1%),
+          calc(var(--second-x, var(--left-wing-second-x)) * 1%) calc(var(--second-y, var(--left-wing-second-y)) * 1%),
+          calc(var(--third-x, var(--left-wing-third-x)) * 1%) calc(var(--third-y, var(--left-wing-third-y)) * 1%));
+      background: var(--background, var(--left-wing-background));
+    }
+  }
+
+  // Specific overrides
+  .left:after {
+    /* body */
+    --background: var(--left-body-background);
+    --first-x: var(--left-body-first-x);
+    --first-y: var(--left-body-first-y);
+    --second-x: var(--left-body-second-x);
+    --second-y: var(--left-body-second-y);
+    --third-x: var(--left-body-third-x);
+    --third-y: var(--left-body-third-y);
+  }
+
+  .right:before {
+    /* wing */
+    --background: var(--right-wing-background);
+    --first-x: var(--right-wing-first-x);
+    --first-y: var(--right-wing-first-y);
+    --second-x: var(--right-wing-second-x);
+    --second-y: var(--right-wing-second-y);
+    --third-x: var(--right-wing-third-x);
+    --third-y: var(--right-wing-third-y);
+  }
+
+  .right:after {
+    /* body */
+    --background: var(--right-body-background);
+    --first-x: var(--right-body-first-x);
+    --first-y: var(--right-body-first-y);
+    --second-x: var(--right-body-second-x);
+    --second-y: var(--right-body-second-y);
+    --third-x: var(--right-body-third-x);
+    --third-y: var(--right-body-third-y);
+  }
+
+  span {
+    position: relative;
+    z-index: 2;
+    opacity: var(--text-opacity);
+
+    &.success {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: var(--success-opacity);
+      transform: scale(var(--success-scale));
+      color: var(--success);
+      font-style: normal !important;
+      transform-origin: center !important;
+  transform: rotate(calc(var(--rotate) * -1deg));
+
+
+    }
+
+  }
+
+}
+
+
+.contact-form .form-group {
+  position: relative;
+  margin-bottom: 1.5rem;
+
+  input, textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border 0.3s;
+  }
+
+  input.ng-touched.ng-invalid,
+  textarea.ng-touched.ng-invalid {
+    border-color: #e74c3c;
+  }
+
+  .error {
+    color: #e74c3c;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: block;
+  }
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+button.paper-plane-button[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
