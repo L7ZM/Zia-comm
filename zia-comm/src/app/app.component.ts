@@ -2,18 +2,20 @@ import { Component } from '@angular/core';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
+import { WhatsappButtonComponent } from './layout/whatsapp-button/whatsapp-button.component';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, FooterComponent, TranslateModule],
+  imports: [RouterOutlet, HeaderComponent, FooterComponent, WhatsappButtonComponent, TranslateModule],
   template: `
     <app-header></app-header>
 
     <!-- ROUTER OUTLET -->
     <main>
       <router-outlet></router-outlet>
+      <app-whatsapp-button></app-whatsapp-button>
     </main>
 
     <!-- FOOTER ALWAYS VISIBLE -->
