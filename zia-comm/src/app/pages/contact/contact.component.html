@@ -1,5 +1,6 @@
 <section class="contact-hero" [dir]="currentLang === 'ar' ? 'rtl' : 'ltr'">
   <div class="contact-container">
+
     <!-- Header -->
     <div class="contact-header">
       <h1>{{ "CONTACT.TITLE" | translate }}</h1>
@@ -7,53 +8,34 @@
     </div>
 
     <div class="contact-grid">
-      <!-- LEFT: Contact Form -->
+      <!-- Contact Form -->
       <div class="contact-form">
-        <form [formGroup]="contactForm" (ngSubmit)="onSubmit($event)">
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+          
           <!-- Name -->
           <div class="form-group">
             <label>{{ "CONTACT.FORM.NAME" | translate }}</label>
-            <input
-              type="text"
-              formControlName="name"
-              placeholder="{{ 'CONTACT.FORM.NAME_PLACEHOLDER' | translate }}"
-            />
+            <input type="text" formControlName="name" placeholder="{{ 'CONTACT.FORM.NAME_PLACEHOLDER' | translate }}">
             <div class="error" *ngIf="contactForm.get('name')?.touched && contactForm.get('name')?.invalid">
-              <span *ngIf="contactForm.get('name')?.errors?.['required']">
-                {{ 'CONTACT.FORM.VALIDATION.NAME_REQUIRED' | translate }}
-              </span>
-              <span *ngIf="contactForm.get('name')?.errors?.['minlength']">
-                {{ 'CONTACT.FORM.VALIDATION.NAME_MINLENGTH' | translate:{min:2} }}
-              </span>
+              <span *ngIf="contactForm.get('name')?.errors?.['required']">{{ 'CONTACT.FORM.VALIDATION.NAME_REQUIRED' | translate }}</span>
+              <span *ngIf="contactForm.get('name')?.errors?.['minlength']">{{ 'CONTACT.FORM.VALIDATION.NAME_MINLENGTH' | translate:{min:2} }}</span>
             </div>
           </div>
 
           <!-- Email -->
           <div class="form-group">
             <label>{{ "CONTACT.FORM.EMAIL" | translate }}</label>
-            <input
-              type="email"
-              formControlName="email"
-              placeholder="{{ 'CONTACT.FORM.EMAIL_PLACEHOLDER' | translate }}"
-            />
+            <input type="email" formControlName="email" placeholder="{{ 'CONTACT.FORM.EMAIL_PLACEHOLDER' | translate }}">
             <div class="error" *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.invalid">
-              <span *ngIf="contactForm.get('email')?.errors?.['required']">
-                {{ 'CONTACT.FORM.VALIDATION.EMAIL_REQUIRED' | translate }}
-              </span>
-              <span *ngIf="contactForm.get('email')?.errors?.['email']">
-                {{ 'CONTACT.FORM.VALIDATION.EMAIL_INVALID' | translate }}
-              </span>
+              <span *ngIf="contactForm.get('email')?.errors?.['required']">{{ 'CONTACT.FORM.VALIDATION.EMAIL_REQUIRED' | translate }}</span>
+              <span *ngIf="contactForm.get('email')?.errors?.['email']">{{ 'CONTACT.FORM.VALIDATION.EMAIL_INVALID' | translate }}</span>
             </div>
           </div>
 
           <!-- Subject -->
           <div class="form-group">
             <label>{{ "CONTACT.FORM.SUBJECT" | translate }}</label>
-            <input
-              type="text"
-              formControlName="subject"
-              placeholder="{{ 'CONTACT.FORM.SUBJECT_PLACEHOLDER' | translate }}"
-            />
+            <input type="text" formControlName="subject" placeholder="{{ 'CONTACT.FORM.SUBJECT_PLACEHOLDER' | translate }}">
             <div class="error" *ngIf="contactForm.get('subject')?.touched && contactForm.get('subject')?.invalid">
               <span>{{ 'CONTACT.FORM.VALIDATION.SUBJECT_REQUIRED' | translate }}</span>
             </div>
@@ -62,66 +44,26 @@
           <!-- Message -->
           <div class="form-group">
             <label>{{ "CONTACT.FORM.MESSAGE" | translate }}</label>
-            <textarea
-              rows="5"
-              formControlName="message"
-              placeholder="{{ 'CONTACT.FORM.MESSAGE_PLACEHOLDER' | translate }}"
-            ></textarea>
+            <textarea rows="5" formControlName="message" placeholder="{{ 'CONTACT.FORM.MESSAGE_PLACEHOLDER' | translate }}"></textarea>
             <div class="error" *ngIf="contactForm.get('message')?.touched && contactForm.get('message')?.invalid">
-              <span *ngIf="contactForm.get('message')?.errors?.['required']">
-                {{ 'CONTACT.FORM.VALIDATION.MESSAGE_REQUIRED' | translate }}
-              </span>
-              <span *ngIf="contactForm.get('message')?.errors?.['minlength']">
-                {{ 'CONTACT.FORM.VALIDATION.MESSAGE_MINLENGTH' | translate:{min:10} }}
-              </span>
+              <span *ngIf="contactForm.get('message')?.errors?.['required']">{{ 'CONTACT.FORM.VALIDATION.MESSAGE_REQUIRED' | translate }}</span>
+              <span *ngIf="contactForm.get('message')?.errors?.['minlength']">{{ 'CONTACT.FORM.VALIDATION.MESSAGE_MINLENGTH' | translate:{min:10} }}</span>
             </div>
           </div>
 
           <!-- Submit Button -->
-          <button
-            #button
-            type="submit"
-            class="paper-plane-button"
-          >
-            <span class="default">{{ "CONTACT.FORM.SUBMIT" | translate }}</span>
-            <span class="success">{{ "CONTACT.FORM.SUCCESS" | translate }}</span>
-            <div class="left"></div>
-            <div class="right"></div>
+          <button type="submit" class="btn-primary" [disabled]="contactForm.invalid">
+            {{ "CONTACT.FORM.SUBMIT" | translate }}
           </button>
         </form>
       </div>
 
-
-      <!-- RIGHT: Contact Info -->
+      <!-- Contact Info -->
       <div class="contact-info">
         <h3>{{ "CONTACT.INFO.TITLE" | translate }}</h3>
-
-        <div class="info-item">
-          <i class="fas fa-envelope"></i>
-          <span>{{ "CONTACT.INFO.EMAIL" | translate }}</span>
-        </div>
-
-        <div class="info-item">
-          <i class="fas fa-phone"></i>
-          <span>{{ "CONTACT.INFO.PHONE" | translate }}</span>
-        </div>
-
-        <div class="info-item">
-          <i class="fas fa-map-marker-alt"></i>
-          <span>{{ "CONTACT.INFO.LOCATION" | translate }}</span>
-        </div>
-
-        <div class="info-socials">
-          <a href="https://api.whatsapp.com/send/?phone=212615603461&text&type=phone_number&app_absent=0" target="_blank">
-            <i class="fab fa-whatsapp"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/fouzia-azmi-6b7870199/" target="_blank">
-            <i class="fab fa-linkedin"></i>
-          </a>
-          <a href="https://www.instagram.com/azmi_fouzia/" target="_blank">
-            <i class="fab fa-instagram"></i>
-          </a>
-        </div>
+        <div class="info-item"><i class="fas fa-envelope"></i><span>{{ "CONTACT.INFO.EMAIL" | translate }}</span></div>
+        <div class="info-item"><i class="fas fa-phone"></i><span>{{ "CONTACT.INFO.PHONE" | translate }}</span></div>
+        <div class="info-item"><i class="fas fa-map-marker-alt"></i><span>{{ "CONTACT.INFO.LOCATION" | translate }}</span></div>
       </div>
     </div>
   </div>
