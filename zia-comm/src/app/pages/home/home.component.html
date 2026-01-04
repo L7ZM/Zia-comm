@@ -1,99 +1,79 @@
-<section class="home-hero">
+<section class="home-hero" [dir]="currentLang === 'ar' ? 'rtl' : 'ltr'">
   <div class="hero-container">
 
-    <!-- LEFT: Text -->
     <div class="hero-content">
       <h1>
-        Accélérez votre performance commerciale
-        <span>grâce à la stratégie digitale & l’IA</span>
+        {{ 'HOME.HERO.TITLE' | translate }}
+        <span>{{ 'HOME.HERO.SUBTITLE' | translate }}</span>
       </h1>
 
-      <p>
-        ZIA COMM accompagne les entreprises et les professionnels
-        dans la structuration, la digitalisation et l’automatisation
-        de leur croissance.
-      </p>
+      <p>{{ 'HOME.HERO.TEXT' | translate }}</p>
 
       <div class="hero-actions">
-        <a routerLink="/services" routerLinkActive="active-link" class="btn btn-primary">Nos services</a>
-        <a routerLink="/training" routerLinkActive="active-link" class="btn btn-outline">Formations IA</a>
+        <a routerLink="/services" class="btn btn-primary">
+          {{ 'HOME.HERO.BTN_SERVICES' | translate }}
+        </a>
+        <a routerLink="/training" class="btn btn-outline">
+          {{ 'HOME.HERO.BTN_TRAINING' | translate }}
+        </a>
       </div>
     </div>
 
-    <!-- RIGHT: Image -->
     <div class="hero-visual">
-      <img src="assets/pic.jpg" alt="Fouzia Azmi – Conférences & Formations" />
+      <img src="assets/Pictures/pic.webp" alt="Fouzia Azmi – Conférences & Formations" />
     </div>
 
   </div>
 </section>
 
-<!-- What We Do Section -->
-<section class="home-what-we-do">
+<section class="home-what-we-do" [dir]="currentLang === 'ar' ? 'rtl' : 'ltr'">
   <div class="wwd-container">
-    <h2>Ce que nous faisons</h2>
-    <p>
-      Chez <strong>ZIA COMM</strong>, nous transformons les entreprises avec des stratégies commerciales, digitales et d’automatisation basées sur l’expérience, la data et l’intelligence artificielle.
-    </p>
+    <h2>{{ 'HOME.WWD.TITLE' | translate }}</h2>
+    <p [innerHTML]="'HOME.WWD.TEXT' | translate"></p>
 
     <div class="wwd-grid">
       <div class="wwd-card">
         <i class="fas fa-lightbulb"></i>
-        <h3>Stratégies sur mesure</h3>
-        <p>Analyse du marché, positionnement stratégique et plan d’action commercial adapté à votre business.</p>
+        <h3>{{ 'HOME.WWD.CARDS.STRATEGY.TITLE' | translate }}</h3>
+        <p>{{ 'HOME.WWD.CARDS.STRATEGY.TEXT' | translate }}</p>
       </div>
+
       <div class="wwd-card">
         <i class="fas fa-rocket"></i>
-        <h3>Marketing Digital</h3>
-        <p>Plans digitaux performants, gestion de communautés, optimisation de campagnes et référencement.</p>
+        <h3>{{ 'HOME.WWD.CARDS.MARKETING.TITLE' | translate }}</h3>
+        <p>{{ 'HOME.WWD.CARDS.MARKETING.TEXT' | translate }}</p>
       </div>
+
       <div class="wwd-card">
         <i class="fas fa-brain"></i>
-        <h3>Intégration IA</h3>
-        <p>Solutions d’automatisation intelligente, analyse de données et outils IA pour gagner en efficacité.</p>
+        <h3>{{ 'HOME.WWD.CARDS.AI.TITLE' | translate }}</h3>
+        <p>{{ 'HOME.WWD.CARDS.AI.TEXT' | translate }}</p>
       </div>
     </div>
   </div>
 </section>
 
-
-<!-- Why Choose Us Section -->
-<section class="home-why-us">
+<section class="home-why-us" [dir]="currentLang === 'ar' ? 'rtl' : 'ltr'">
   <div class="why-container">
-    <div class="why-item">
-      <i class="fas fa-award"></i>
-      <p>Expertise reconnue & crédibilité terrain</p>
-    </div>
-    <div class="why-item">
-      <i class="fas fa-lightbulb"></i>
-      <p>Solutions stratégiques et personnalisées</p>
-    </div>
-    <div class="why-item">
-      <i class="fas fa-robot"></i>
-      <p>Intégration intelligente de l’IA</p>
-    </div>
+    <div class="why-item"><i class="fas fa-award"></i><p>{{ 'HOME.WHY.ITEM1' | translate }}</p></div>
+    <div class="why-item"><i class="fas fa-lightbulb"></i><p>{{ 'HOME.WHY.ITEM2' | translate }}</p></div>
+    <div class="why-item"><i class="fas fa-robot"></i><p>{{ 'HOME.WHY.ITEM3' | translate }}</p></div>
   </div>
 </section>
 
-
-<!-- Testimonials Section -->
-<section class="home-testimonials">
+<section class="home-testimonials" [dir]="currentLang === 'ar' ? 'rtl' : 'ltr'">
   <div class="test-container">
-    <h2>Leadership & Expertise</h2>
+    <h2>{{ 'HOME.TESTIMONIALS.TITLE' | translate }}</h2>
+
     <div class="test-cards">
       <div class="test-card">
-        <blockquote>
-          J’ai eu l’honneur de modérer une conférence sur l’intelligence artificielle et son impact sur les entreprises.
-        </blockquote>
+        <blockquote>{{ 'HOME.TESTIMONIALS.QUOTE1' | translate }}</blockquote>
         <span>Fouzia AZMI — ZIA COMM</span>
       </div>
       <div class="test-card">
-        <blockquote>
-          L’IA n’est pas là pour remplacer l’humain mais pour transformer — apprendre, expérimenter et s’adapter sont les clés.
-        </blockquote>
+        <blockquote>{{ 'HOME.TESTIMONIALS.QUOTE2' | translate }}</blockquote>
         <span>Fouzia AZMI — Consultante & Formatrice</span>
       </div>
     </div>
   </div>
 </section>
-

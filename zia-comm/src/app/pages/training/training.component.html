@@ -1,50 +1,40 @@
-<section class="training-section">
+<section class="training-section" [dir]="currentLang === 'ar' ? 'rtl' : 'ltr'">
   <div class="training-container">
 
     <!-- HEADER / INTRO -->
     <div class="training-header">
-      <h2>Formation en Intelligence Artificielle</h2>
-      <p>
-        Une formation complète et pratique pour les professionnels souhaitant intégrer l’Intelligence Artificielle dans leur quotidien. Animée par <strong>Fouzia Azmi</strong>, experte en stratégie digitale, automatisation et IA, cette formation vous permet d’acquérir des compétences concrètes pour optimiser votre productivité, automatiser vos tâches répétitives et prendre de meilleures décisions grâce à la data et aux outils intelligents.
-      </p>
+      <h2>{{ 'TRAINING.TITLE' | translate }}</h2>
+      <p>{{ 'TRAINING.SUBTITLE' | translate }}</p>
     </div>
 
     <!-- TRAINING CONTENT GRID -->
     <div class="training-grid">
-
-      <!-- FEATURE CARDS -->
-      <div class="training-card" *ngFor="let feature of trainingFeatures">
-        <div class="icon-wrapper-training">
-          <i [class]="feature.icon"></i>
+      <ng-container *ngIf="features$ | async as features">
+        <div class="training-card" *ngFor="let feature of features">
+          <div class="icon-wrapper-training">
+            <i [class]="feature.ICON"></i>
+          </div>
+          <h3>{{ feature.TITLE }}</h3>
+          <p>{{ feature.DESC }}</p>
         </div>
-        <h3>{{ feature.title }}</h3>
-        <p>{{ feature.description }}</p>
-      </div>
-
+      </ng-container>
     </div>
 
     <!-- ADDITIONAL DETAILS -->
     <div class="training-details-extended">
-      <h3>Ce que vous allez apprendre :</h3>
+      <h3>{{ 'TRAINING.DETAILS_TITLE' | translate }}</h3>
       <ul>
-        <li><i class="fas fa-check-circle"></i> Utiliser des outils d’IA avancés pour automatiser vos tâches quotidiennes.</li>
-        <li><i class="fas fa-check-circle"></i> Optimiser la gestion de votre temps et vos processus internes.</li>
-        <li><i class="fas fa-check-circle"></i> Analyser les données pour prendre des décisions éclairées et augmenter la performance de votre entreprise.</li>
-        <li><i class="fas fa-check-circle"></i> Créer des workflows intelligents pour gagner en efficacité et réduire les erreurs.</li>
-        <li><i class="fas fa-check-circle"></i> Développer des stratégies sur mesure adaptées à votre secteur et vos objectifs commerciaux.</li>
-        <li><i class="fas fa-check-circle"></i> Déployer des outils numériques pour améliorer l’expérience client et la visibilité de votre entreprise.</li>
-        <li><i class="fas fa-check-circle"></i> Comprendre les concepts de machine learning et d’automatisation intelligente, même sans compétences techniques préalables.</li>
+        <li *ngFor="let point of ('TRAINING.DETAILS_POINTS' | translate)">
+          <i class="fas fa-check-circle"></i> {{ point }}
+        </li>
       </ul>
-
-      <p>
-        Les sessions sont régulièrement organisées à <strong>Rabat</strong>, en petits groupes pour favoriser l’interaction et l’apprentissage pratique. Préinscriptions ouvertes pour les prochaines dates afin de garantir votre place.
-      </p>
+      <p [innerHTML]="'TRAINING.LOCATION' | translate"></p>
     </div>
 
     <!-- CTA / BUTTON -->
     <div class="training-cta">
       <a class="btn btn-training" routerLink="/contact">
-        Demander des informations
+        {{ 'TRAINING.CTA' | translate }}
       </a>
     </div>
 

@@ -1,45 +1,40 @@
-// clients.component.ts
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { Observable } from 'rxjs';
+
+interface Client {
+  key: string;
+  logo: string;
+}
 
 @Component({
-  standalone:true,
+  standalone: true,
   selector: 'app-clients',
   templateUrl: './clients.component.html',
   styleUrls: ['./clients.component.scss'],
-  imports:[CommonModule]
+  imports: [CommonModule, TranslateModule]
 })
 export class ClientsComponent {
-  clients = [
-    {
-      name: 'MIAfrica',
-      logo: 'assets/miafrica.png',
-      description: 'Global innovation partner in Africa.'
-    },
-    {
-      name: 'IPF ADVISORS',
-      logo: 'assets/ipf.png',
-      description: 'Strategic financial advisory services.'
-    },
-    {
-      name: 'NLD NO LIMIT DEVELOPMENT',
-      logo: 'assets/nld.png',
-      description: 'Activateur d\'excellence.'
-    },
-    {
-      name: 'S4U',
-      logo: 'assets/s4u.png',
-      description: 'Smart solutions for you.'
-    },
-    {
-      name: 'BOTANIKA MARRAKECH',
-      logo: 'assets/botanika.png',
-      description: 'Luxury botanical experiences.'
-    },
-    {
-      name: 'AXIAL FACILITIES',
-      logo: 'assets/axial.png',
-      description: 'Facility management with precision.'
-    }
+  currentLang: string;
+  clientsText$: Observable<any>;
+
+  clients: Client[] = [
+    { key: 'MIAFRICA', logo: 'assets/Pictures/miafrica.webp' },
+    { key: 'IPF', logo: 'assets/Pictures/ipf.webp' },
+    { key: 'NLD', logo: 'assets/Pictures/nld.webp' },
+    { key: 'S4U', logo: 'assets/Pictures/s4u.webp' },
+    { key: 'BOTANIKA', logo: 'assets/Pictures/botanika.webp' },
+    { key: 'AXIAL', logo: 'assets/Pictures/axial.webp' }
   ];
+
+  constructor(private translate: TranslateService) {
+    this.currentLang = this.translate.currentLang || 'fr';
+    this.clientsText$ = this.translate.get('CLIENTS.LIST');
+
+    this.translate.onLangChange.subscribe(event => {
+      this.currentLang = event.lang;
+      this.clientsText$ = this.translate.get('CLIENTS.LIST');
+    });
+  }
 }

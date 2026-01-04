@@ -1,14 +1,23 @@
 import { Component, AfterViewInit } from '@angular/core';
 import gsap from 'gsap';
 import { RouterModule } from '@angular/router';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 @Component({
   selector: 'app-about',
   standalone: true,
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss'],
-  imports:[RouterModule]
+  imports:[RouterModule,TranslateModule]
 })
 export class AboutComponent implements AfterViewInit {
+  currentLang: string;
+
+  constructor(private translate: TranslateService) {
+    this.currentLang = this.translate.currentLang || 'fr';
+    this.translate.onLangChange.subscribe(event => {
+      this.currentLang = event.lang;
+    });
+  }
 
   ngAfterViewInit(): void {
     gsap.from('.about-page > *', {

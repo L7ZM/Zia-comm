@@ -1,14 +1,23 @@
-<!-- clients.component.html -->
-<section class="clients-section">
+<section class="clients-section" [dir]="currentLang === 'ar' ? 'rtl' : 'ltr'">
   <div class="clients-header">
-    <h2>Nos Clients</h2>
-    <p>Ils nous font confiance</p>
+    <h2>{{ 'CLIENTS.TITLE' | translate }}</h2>
+    <p>{{ 'CLIENTS.SUBTITLE' | translate }}</p>
   </div>
+
   <div class="clients-grid">
-    <div class="client-card" *ngFor="let client of clients">
-      <img [src]="client.logo" [alt]="client.name" class="client-logo" />
-      <h3>{{ client.name }}</h3>
-      <p>{{ client.description }}</p>
-    </div>
+    <ng-container *ngIf="clientsText$ | async as texts">
+      <div
+        class="client-card"
+        *ngFor="let client of clients; let i = index"
+      >
+        <img
+          [src]="client.logo"
+          [alt]="texts[i].NAME"
+          class="client-logo"
+        />
+        <h3>{{ texts[i].NAME }}</h3>
+        <p>{{ texts[i].DESCRIPTION }}</p>
+      </div>
+    </ng-container>
   </div>
 </section>

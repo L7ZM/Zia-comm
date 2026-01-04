@@ -1,29 +1,27 @@
-<footer class="footer">
+<footer class="footer" [dir]="currentLang === 'ar' ? 'rtl' : 'ltr'">
   <div class="footer-inner">
 
     <!-- BRAND -->
     <div class="footer-brand">
-      <img src="assets/logo.jpg" alt="Zia Comm logo" class="footer-logo" />
-      <p class="footer-tagline">
-        Conseil en stratégie commerciale, digitalisation et intelligence artificielle.
-      </p>
+      <img src="assets/Pictures/logo.jpg" alt="Zia Comm logo" class="footer-logo" />
+      <p class="footer-tagline">{{ 'FOOTER.TAGLINE' | translate }}</p>
     </div>
 
     <!-- NAVIGATION -->
     <nav class="footer-nav" aria-label="Footer Navigation">
-      <h4>Navigation</h4>
+      <h4>{{ 'FOOTER.NAV.TITLE' | translate }}</h4>
       <ul>
-        <li><a routerLink="/">Accueil</a></li>
-        <li><a routerLink="/services">Services</a></li>
-        <li><a routerLink="/training">Formations IA</a></li>
-        <li><a routerLink="/about">À propos</a></li>
-        <li><a routerLink="/contact">Contact</a></li>
+        <li><a routerLink="/">{{ 'FOOTER.NAV.HOME' | translate }}</a></li>
+        <li><a routerLink="/services">{{ 'FOOTER.NAV.SERVICES' | translate }}</a></li>
+        <li><a routerLink="/training">{{ 'FOOTER.NAV.TRAINING' | translate }}</a></li>
+        <li><a routerLink="/about">{{ 'FOOTER.NAV.ABOUT' | translate }}</a></li>
+        <li><a routerLink="/contact">{{ 'FOOTER.NAV.CONTACT' | translate }}</a></li>
       </ul>
     </nav>
 
     <!-- SOCIAL -->
     <div class="footer-social">
-      <h4>Suivez-nous</h4>
+      <h4>{{ 'FOOTER.SOCIAL.TITLE' | translate }}</h4>
       <div class="social-links">
         <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
         <a href="https://www.instagram.com/azmi_fouzia/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -36,6 +34,6 @@
 
   <!-- BOTTOM BAR -->
   <div class="footer-bottom">
-    <p>© {{ year }} Zia Comm. Tous droits réservés.</p>
+    <p>{{ 'FOOTER.COPYRIGHT' | translate:{ year: year } }}</p>
   </div>
 </footer>
