@@ -1,3 +1,4 @@
+<!-- HTML Template -->
 <header class="header" [class.scrolled]="isScrolled">
   <div class="nav-container">
     <!-- Logo -->
@@ -15,7 +16,6 @@
       >
         {{ "HEADER.HOME" | translate }}
       </a>
-
       <a
         routerLink="/training"
         routerLinkActive="active-link"
@@ -23,7 +23,6 @@
       >
         {{ "HEADER.TRAINING" | translate }}
       </a>
-
       <a
         routerLink="/services"
         routerLinkActive="active-link"
@@ -31,7 +30,6 @@
       >
         {{ "HEADER.SERVICES" | translate }}
       </a>
-
       <a
         routerLink="/clients"
         routerLinkActive="active-link"
@@ -39,7 +37,6 @@
       >
         {{ "HEADER.CLIENTS" | translate }}
       </a>
-
       <a
         routerLink="/about"
         routerLinkActive="active-link"
@@ -47,7 +44,6 @@
       >
         {{ "HEADER.ABOUT" | translate }}
       </a>
-
       <a
         routerLink="/contact"
         routerLinkActive="active-link"
@@ -56,67 +52,72 @@
         {{ "HEADER.CONTACT" | translate }}
       </a>
 
-      <!-- Language Switcher - Mobile -->
-<div class="lang-switcher">
-  <div class="neural-container"
-       direction="ltr"
-       (click)="$event.stopPropagation(); switchLanguage(currentLang === 'fr' ? 'ar' : 'fr')"
-       [class.ar-active]="currentLang === 'ar'">
-
-    <div class="data-path">
-      <div class="pulse-spark" [class.move-ar]="currentLang === 'ar'"></div>
-    </div>
-
-    <div class="node" [class.active]="currentLang === 'fr'">
-      <div class="node-hex">
-        <img src="assets/Pictures/FR.webp" alt="FR">
+      <!-- Language Switcher - Mobile (Inside Menu) -->
+      <div class="lang-switcher mobile-lang">
+        <div class="lang-options">
+          <button
+            class="lang-btn"
+            [class.active]="currentLang === 'fr'"
+            (click)="switchLanguage('fr'); closeMenu()"
+          >
+            <img src="assets/Pictures/FR.webp" alt="FR" />
+            <span>FR</span>
+          </button>
+          <button
+            class="lang-btn"
+            [class.active]="currentLang === 'ar'"
+            (click)="switchLanguage('ar'); closeMenu()"
+          >
+            <img src="assets/Pictures/MAR.webp" alt="AR" />
+            <span>AR</span>
+          </button>
+          <button
+            class="lang-btn"
+            [class.active]="currentLang === 'en'"
+            (click)="switchLanguage('en'); closeMenu()"
+          >
+            <img src="assets/Pictures/EN.webp" alt="EN" />
+            <span>EN</span>
+          </button>
+        </div>
       </div>
-      <span class="node-text">FR</span>
-    </div>
-
-    <div class="node" [class.active]="currentLang === 'ar'">
-      <span class="node-text">AR</span>
-      <div class="node-hex">
-        <img src="assets/Pictures/MAR.webp" alt="AR">
-      </div>
-    </div>
-
-  </div>
-</div>
 
       <!-- Social Icons (visible in mobile menu) -->
       <div class="nav-social">
-        <!-- icons unchanged -->
+        <!-- Add your social icons here -->
       </div>
     </nav>
 
     <!-- Language Switcher - Desktop -->
-<div class="lang-switcher">
-  <div class="neural-container"
-       direction="ltr"
-       (click)="$event.stopPropagation(); switchLanguage(currentLang === 'fr' ? 'ar' : 'fr')"
-       [class.ar-active]="currentLang === 'ar'">
-
-    <div class="data-path">
-      <div class="pulse-spark" [class.move-ar]="currentLang === 'ar'"></div>
-    </div>
-
-    <div class="node" [class.active]="currentLang === 'fr'">
-      <div class="node-hex">
-        <img src="assets/Pictures/FR.webp" alt="FR">
+    <div class="lang-switcher desktop-lang">
+      <div class="lang-options">
+        <button
+          class="lang-btn"
+          [class.active]="currentLang === 'en'"
+          (click)="switchLanguage('en')"
+        >
+          <img src="assets/Pictures/EN.webp" alt="EN" />
+          <span>EN</span>
+        </button>
+        <button
+          class="lang-btn"
+          [class.active]="currentLang === 'fr'"
+          (click)="switchLanguage('fr')"
+        >
+          <img src="assets/Pictures/FR.webp" alt="FR" />
+          <span>FR</span>
+        </button>
+        <button
+          class="lang-btn"
+          [class.active]="currentLang === 'ar'"
+          (click)="switchLanguage('ar')"
+        >
+          <img src="assets/Pictures/MAR.webp" alt="AR" />
+          <span>AR</span>
+        </button>
       </div>
-      <span class="node-text">FR</span>
     </div>
 
-    <div class="node" [class.active]="currentLang === 'ar'">
-      <span class="node-text">AR</span>
-      <div class="node-hex">
-        <img src="assets/Pictures/MAR.webp" alt="AR">
-      </div>
-    </div>
-
-  </div>
-</div>
     <!-- Hamburger -->
     <button
       class="nav-toggle"

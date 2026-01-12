@@ -119,78 +119,86 @@
       }
     },
     "WHY": {
+      "TITLE": "Pourquoi choisir ZIA COMM ?",
       "ITEM1": "Expertise reconnue & crédibilité terrain",
       "ITEM2": "Solutions stratégiques et personnalisées",
       "ITEM3": "Intégration intelligente de l’IA"
     },
     "TESTIMONIALS": {
       "TITLE": "Leadership & Expertise",
-      "QUOTE1": "J’ai eu l’honneur de modérer une conférence sur l’intelligence artificielle et son impact sur les entreprises.",
+      "QUOTE1": "Dans un monde numérique en constante évolution, adopter l’IA n’est pas une option — c’est un impératif. Je soutiens les professionnels dans leur transformation stratégique et l’ouverture de nouvelles opportunités grâce à la clarté, le courage et l’innovation intelligente.",
       "QUOTE2": "L’IA n’est pas là pour remplacer l’humain mais pour transformer — apprendre, expérimenter et s’adapter sont les clés."
     }
   },
 
 
-  "SERVICES": {
-    "TITLE": "Nos Services",
-    "SUBTITLE": "Découvrez nos solutions personnalisées pour booster votre entreprise.",
-    "ITEMS": [
-      {
-        "TITLE": "Stratégies Commerciales",
-        "INTRO": "Optimisez votre croissance avec nos solutions sur mesure :",
-        "POINTS": [
-          "Études de marché et positionnement stratégique",
-          "Développement commercial et plan d'action",
-          "Mise en place de départements commerciaux personnalisés"
-        ]
-      },
-      {
-        "TITLE": "Stratégies Marketing",
-        "INTRO": "Maximisez votre impact sur le marché :",
-        "POINTS": [
-          "Définition d'objectifs marketing clairs",
-          "Stratégies adaptées aux secteurs B2B, B2C et e-commerce",
-          "Messages percutants pour votre audience cible"
-        ]
-      },
-      {
-        "TITLE": "Marketing Digital",
-        "INTRO": "Établissez une présence en ligne performante :",
-        "POINTS": [
-          "Création de contenu engageant",
-          "Gestion des réseaux sociaux",
-          "Optimisation des performances digitales"
-        ]
-      },
-      {
-        "TITLE": "Solutions SaaS",
-        "INTRO": "Boostez votre productivité :",
-        "POINTS": [
-          "Gestion des tâches et collaboration",
-          "Tableaux de bord de suivi",
-          "Stockage sécurisé en ligne"
-        ]
-      },
-      {
-        "TITLE": "Digitalisation des Processus",
-        "INTRO": "Transformez vos opérations :",
-        "POINTS": [
-          "Optimisation des workflows",
-          "Solutions numériques adaptées",
-          "Formation des équipes"
-        ]
-      },
-      {
-        "TITLE": "Intégration de l’IA",
-        "INTRO": "Révolutionnez votre approche :",
-        "POINTS": [
-          "Opportunités d’automatisation",
-          "Solutions IA personnalisées",
-          "Optimisation basée sur la data"
-        ]
-      }
-    ]
-  },
+"SERVICES": {
+  "TITLE": "Nos Services",
+  "SUBTITLE": "Découvrez nos solutions personnalisées pour booster votre entreprise.",
+  "ITEMS": [
+    {
+      "TITLE": "Stratégies Commerciales",
+      "INTRO": "Optimisez votre croissance avec nos solutions sur mesure :",
+      "POINTS": [
+        "Études de marché et positionnement stratégique",
+        "Développement commercial et plan d'action",
+        "Mise en place de départements commerciaux personnalisés"
+      ],
+      "ICON": "fas fa-chart-line"
+    },
+    {
+      "TITLE": "Stratégies Marketing",
+      "INTRO": "Maximisez votre impact sur le marché :",
+      "POINTS": [
+        "Définition d'objectifs marketing clairs",
+        "Stratégies adaptées aux secteurs B2B, B2C et e-commerce",
+        "Messages percutants pour votre audience cible"
+      ],
+      "ICON": "fas fa-bullhorn"
+    },
+    {
+      "TITLE": "Marketing Digital",
+      "INTRO": "Établissez une présence en ligne performante :",
+      "POINTS": [
+        "Création de contenu engageant",
+        "Gestion des réseaux sociaux",
+        "Optimisation des performances digitales"
+      ],
+      "ICON": "fas fa-laptop-code"
+    },
+    {
+      "TITLE": "Solutions SaaS",
+      "INTRO": "Boostez votre productivité :",
+      "POINTS": [
+        "Gestion des tâches et collaboration",
+        "Tableaux de bord de suivi",
+        "Stockage sécurisé en ligne"
+      ],
+      "ICON": "fas fa-cloud"
+    },
+    {
+      "TITLE": "Digitalisation des Processus",
+      "INTRO": "Transformez vos opérations :",
+      "POINTS": [
+        "Optimisation des workflows",
+        "Solutions numériques adaptées",
+        "Formation des équipes"
+      ],
+      "ICON": "fas fa-cogs"
+    },
+    {
+      "TITLE": "Intégration de l’IA",
+      "INTRO": "Révolutionnez votre approche :",
+      "POINTS": [
+        "Opportunités d’automatisation",
+        "Solutions IA personnalisées",
+        "Optimisation basée sur la data"
+      ],
+      "ICON": "fas fa-robot"
+    }
+  ]
+}
+,
 
 
   "TRAINING": {

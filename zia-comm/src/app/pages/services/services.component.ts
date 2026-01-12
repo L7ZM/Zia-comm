@@ -12,10 +12,10 @@ import { Observable } from 'rxjs';
 })
 export class ServicesComponent {
   services$!: Observable<any[]>;
-  currentLang!: string; // declare without initialization
+  currentLang!: string;
 
   constructor(private translate: TranslateService) {
-    this.currentLang = this.translate.currentLang || 'fr'; // initialize here
+    this.currentLang = this.translate.currentLang || 'fr';
     this.loadServices();
 
     this.translate.onLangChange.subscribe(e => {

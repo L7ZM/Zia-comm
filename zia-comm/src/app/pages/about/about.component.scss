@@ -1,18 +1,27 @@
-/* ============================================================
-   GLOBAL ANIMATIONS
-============================================================ */
+/* ==========================================
+   VARIABLES
+========================================== */
+$primary: #D4AF37;       // gold accent
+$accent: #C0A938;
+$secondary: #000000;     // dark text/navy-black
+$light-bg: #F9F9F9;      // light background
+$dark-bg: #111111;       // dark cards / navbar
+$text-color: #1a1d29;
+$light-text: #FFFFFF;
 
+/* ==========================================
+   GLOBAL ANIMATIONS
+========================================== */
 @keyframes float-slow {
   0%, 100% { transform: translate(0, 0); }
   50% { transform: translate(35px, -35px); }
 }
 
-/* ============================================================
+/* ==========================================
    HERO SECTION
-============================================================ */
-
+========================================== */
 .about-hero {
-  background: linear-gradient(180deg, #faf8f3 0%, #f5f1e8 50%, #faf8f3 100%);
+  background: linear-gradient(135deg, #faf8f3 0%, #f5f1e8 50%, #faf8f3 100%);
   padding: 6rem 1.5rem;
   position: relative;
   overflow: hidden;
@@ -24,7 +33,7 @@
     left: -15%;
     width: 600px;
     height: 600px;
-    background: radial-gradient(circle, rgba(251, 191, 36, 0.08), transparent 70%);
+    background: radial-gradient(circle, rgba($primary, 0.08), transparent 70%);
     border-radius: 50%;
     filter: blur(120px);
     animation: float-slow 22s ease-in-out infinite;
@@ -47,73 +56,86 @@
   }
 }
 
-.about-text h1 {
-  font-size: clamp(2rem, 4vw, 2.8rem);
-  font-weight: 800;
-  color: #1a1d29;
-  margin-bottom: 1rem;
+.about-text {
+  h1 {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 900;
+    color: $secondary;
+    margin-bottom: 1rem;
 
-  span {
-    display: block;
-    color: #b45309;
+    span {
+      display: block;
+      color: $primary;
+      font-weight: 800;
+    }
   }
-}
 
-.about-text p {
-  color: #4b5563;
-  font-size: 1.1rem;
-  line-height: 1.7;
-  max-width: 600px;
+  p {
+    color: darken($text-color, 15%);
+    font-size: 1.1rem;
+    line-height: 1.7;
+    max-width: 600px;
+    margin-bottom: 1.5rem;
+  }
 }
 
 .about-image img {
   width: 380px;
   border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  box-shadow: 0 20px 40px rgba($secondary, 0.25);
   transform: perspective(900px) rotateY(-8deg);
   transition: transform 0.6s ease, box-shadow 0.6s ease;
 
   &:hover {
     transform: perspective(900px) rotateY(0deg) translateZ(20px);
-    box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+    box-shadow: 0 30px 60px rgba($secondary, 0.35);
   }
 
-  @media (max-width: 768px) {
-    width: 260px;
-  }
+  @media (max-width: 768px) { width: 260px; }
 }
 
-/* ============================================================
+/* ==========================================
    FOUNDER SECTION
-============================================================ */
-
+========================================== */
 .about-founder {
   padding: 5rem 1.5rem;
-  background: #fff;
+  background: $light-bg;
   text-align: center;
 
   h2 {
     font-size: clamp(1.8rem, 3vw, 2.4rem);
-    font-weight: 800;
-    color: #1a1d29;
+    font-weight: 900;
+    color: $secondary;
     margin-bottom: 1.5rem;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 4px;
+      background: linear-gradient(90deg, $primary, rgba($primary, 0.4));
+      border-radius: 2px;
+    }
   }
 
   p {
     max-width: 800px;
     margin: 0 auto 1.2rem;
-    color: #4b5563;
+    color: darken($text-color, 20%);
     font-size: 1.05rem;
     line-height: 1.7;
   }
 }
 
-/* ============================================================
-   MISSION — GOLD 3D CARDS
-============================================================ */
-
+/* ==========================================
+   MISSION SECTION — GOLD CARDS
+========================================== */
 .about-mission {
-  background: linear-gradient(180deg, #faf8f3 0%, #f5f1e8 50%, #faf8f3 100%);
+  background: linear-gradient(135deg, #faf8f3 0%, #f5f1e8 50%, #faf8f3 100%);
   padding: 6rem 1.5rem;
   position: relative;
   overflow: hidden;
@@ -125,7 +147,7 @@
     right: -10%;
     width: 600px;
     height: 600px;
-    background: radial-gradient(circle, rgba(251, 191, 36, 0.08), transparent 70%);
+    background: radial-gradient(circle, rgba($primary, 0.08), transparent 70%);
     border-radius: 50%;
     filter: blur(120px);
     animation: float-slow 25s ease-in-out infinite;
@@ -142,8 +164,8 @@
 
   h2 {
     font-size: clamp(1.8rem, 3vw, 2.4rem);
-    font-weight: 800;
-    color: #1a1d29;
+    font-weight: 900;
+    color: $secondary;
     margin-bottom: 2rem;
   }
 }
@@ -156,152 +178,52 @@
 }
 
 .mission-card {
-  background: linear-gradient(135deg, #fff8e6, #fef3c7);
-  border: 1px solid rgba(251, 191, 36, 0.25);
+  background: rgba($light-bg, 0.95);
+  border: 1px solid rgba($primary, 0.2);
   border-radius: 20px;
   padding: 2.5rem 2rem;
   text-align: center;
-  position: relative;
-  overflow: hidden;
-  transform-style: preserve-3d;
   transition: all 0.45s ease;
+  transform-style: preserve-3d;
+  box-shadow: 0 12px 28px rgba($secondary, 0.08);
 
   &:hover {
-    transform: translateY(-12px) translateZ(25px);
-    box-shadow: 0 20px 45px rgba(0,0,0,0.22);
-    border-color: rgba(251, 191, 36, 0.45);
+    transform: translateY(-10px) translateZ(15px);
+    border-color: rgba($primary, 0.35);
+    box-shadow: 0 20px 40px rgba($secondary, 0.15);
+    background: rgba($primary, 0.08);
   }
 
   i {
     font-size: 2.2rem;
-    color: #b45309;
+    color: $primary;
     margin-bottom: 1rem;
+    transition: transform 0.3s ease;
   }
+
+  &:hover i { transform: translateZ(20px) scale(1.2); }
 
   h3 {
     font-size: 1.3rem;
     font-weight: 700;
-    color: #b45309;
+    color: $secondary;
     margin-bottom: 0.5rem;
   }
 
   p {
-    color: #7c6f57;
+    color: darken($text-color, 20%);
     font-size: 1rem;
     line-height: 1.6;
   }
 }
 
-/* ============================================================
-   CE QUI NOUS DISTINGUE — GOLD 3D CARDS
-============================================================ */
-
-.about-proof {
-  padding: 6rem 1.5rem;
-  background: linear-gradient(180deg, #faf8f3 0%, #f5f1e8 50%, #faf8f3 100%);
-  position: relative;
-  overflow: hidden;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: -10%;
-    right: -10%;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(251, 191, 36, 0.08), transparent 70%);
-    border-radius: 50%;
-    filter: blur(120px);
-    animation: float-slow 25s ease-in-out infinite;
-    z-index: 0;
-  }
-
-  h2 {
-    text-align: center;
-    font-size: clamp(2rem, 4vw, 2.6rem);
-    font-weight: 800;
-    color: #1a1d29;
-    margin-bottom: 3rem;
-    position: relative;
-    z-index: 5;
-
-    &::after {
-      content: "";
-      position: absolute;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 120px;
-      height: 4px;
-      background: linear-gradient(90deg, #fbbf24, rgba(251, 191, 36, 0.3));
-      border-radius: 2px;
-    }
-  }
-}
-
-.proof-grid {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2.5rem;
-  position: relative;
-  z-index: 5;
-}
-
-.proof-card {
-  background: linear-gradient(135deg, #fff8e6, #fef3c7);
-  border: 1px solid rgba(251, 191, 36, 0.35);
-  border-radius: 20px;
-  padding: 2.5rem 2rem;
-  text-align: center;
-  transition: all 0.45s ease;
-
-  &:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 20px 45px rgba(0,0,0,0.22);
-    border-color: rgba(251, 191, 36, 0.55);
-  }
-
-  h3 {
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: #b45309;
-    margin-bottom: 0.5rem;
-  }
-
-  p {
-    color: #7c6f57;
-    font-size: 1rem;
-    line-height: 1.6;
-  }
-}
-
-.icon-wrapper {
-  width: 70px;
-  height: 70px;
-  margin: 0 auto 1.5rem;
-  border-radius: 16px;
-  background: radial-gradient(circle at top,
-              rgba(251, 191, 36, 0.25),
-              rgba(251, 191, 36, 0.08));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  i {
-    font-size: 2rem;
-    color: #b45309;
-  }
-}
-
-/* ============================================================
-   METHOD — DARK STEPS
-============================================================ */
-
+/* ==========================================
+   METHOD SECTION — DARK CARDS
+========================================== */
 .about-method {
   padding: 6rem 1.5rem;
-  background: #fff;
+  background: $dark-bg;
+  color: $light-text;
 }
 
 .method-container {
@@ -311,8 +233,8 @@
 
   h2 {
     font-size: clamp(1.8rem, 3vw, 2.4rem);
-    font-weight: 800;
-    color: #1a1d29;
+    font-weight: 900;
+    color: $primary;
     margin-bottom: 3rem;
   }
 }
@@ -324,17 +246,16 @@
 }
 
 .step {
-  background: #1a1d29;
-  border: 1px solid rgba(251, 191, 36, 0.25);
+  background: rgba($secondary, 0.95);
+  border: 1px solid rgba($primary, 0.25);
   border-radius: 18px;
   padding: 2rem;
-  color: #f9fafb;
   transition: all 0.45s ease;
 
   span {
     font-size: 2rem;
-    font-weight: 800;
-    color: #fbbf24;
+    font-weight: 900;
+    color: $primary;
     display: block;
     margin-bottom: 0.5rem;
   }
@@ -345,10 +266,94 @@
   }
 }
 
-/* ============================================================
-   CTA
-============================================================ */
+/* ==========================================
+   PROOF / DISTINCTIONS — GOLD CARDS
+========================================== */
+.about-proof {
+  padding: 6rem 1.5rem;
+  background: linear-gradient(135deg, #faf8f3 0%, #f5f1e8 50%, #faf8f3 100%);
+  position: relative;
+  overflow: hidden;
 
+  h2 {
+    text-align: center;
+    font-size: clamp(2rem, 4vw, 2.6rem);
+    font-weight: 900;
+    color: $secondary;
+    margin-bottom: 3rem;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 4px;
+      background: linear-gradient(90deg, $primary, rgba($primary, 0.3));
+      border-radius: 2px;
+    }
+  }
+}
+
+.proof-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2.5rem;
+}
+
+.proof-card {
+  background: rgba($light-bg, 0.95);
+  border: 1px solid rgba($primary, 0.3);
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  transition: all 0.45s ease;
+
+  &:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 45px rgba($secondary, 0.2);
+    border-color: rgba($primary, 0.5);
+  }
+
+  h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: $primary;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    color: darken($text-color, 25%);
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .icon-wrapper {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 1.5rem;
+    border-radius: 16px;
+    background: radial-gradient(circle at top,
+      rgba($primary, 0.25),
+      rgba($primary, 0.08));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    i {
+      font-size: 2rem;
+      color: $primary;
+    }
+  }
+}
+
+/* ==========================================
+   CTA SECTION
+========================================== */
 .about-cta {
   padding: 5rem 1.5rem;
   text-align: center;
@@ -356,32 +361,45 @@
 
   h2 {
     font-size: clamp(1.8rem, 3vw, 2.4rem);
-    font-weight: 800;
-    color: #1a1d29;
+    font-weight: 900;
+    color: $secondary;
     margin-bottom: 1rem;
   }
 
   p {
-    color: #4b5563;
+    color: darken($text-color, 20%);
     margin-bottom: 2rem;
   }
 
   .btn-primary {
-    background: #b45309;
-    color: #fff;
+    background: $primary;
+    color: $secondary;
     padding: 0.9rem 2rem;
     border-radius: 10px;
     font-weight: 600;
-    display: inline-block;
     cursor: pointer;
     text-decoration: none;
-    position: relative;
-    z-index: 10;
     transition: all 0.3s ease;
 
     &:hover {
-      background: #92400e;
+      background: darken($primary, 10%);
       transform: translateY(-3px);
     }
+  }
+}
+
+/* ==========================================
+   RESPONSIVE & REDUCED MOTION
+========================================== */
+@media (max-width: 768px) {
+  .mission-grid, .proof-grid, .method-steps {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
   }
 }

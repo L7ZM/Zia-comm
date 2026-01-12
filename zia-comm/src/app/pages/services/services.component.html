@@ -1,28 +1,21 @@
-<section
-  class="services-section"
-  [dir]="currentLang === 'ar' ? 'rtl' : 'ltr'"
->
+<section class="services-section" [dir]="currentLang === 'ar' ? 'rtl' : 'ltr'">
   <div class="services-header">
     <h2>{{ 'SERVICES.TITLE' | translate }}</h2>
     <p>{{ 'SERVICES.SUBTITLE' | translate }}</p>
   </div>
 
   <div class="services-grid">
-    <ng-container *ngIf="services$ | async as services">
-      <div class="service-card" *ngFor="let service of services">
-        <div class="icon-wrapper">
-          <i class="fas fa-check-circle"></i>
-        </div>
-
-        <h3>{{ service.TITLE }}</h3>
-        <p>{{ service.INTRO }}</p>
-
-        <ul>
-          <li *ngFor="let point of service.POINTS">
-            {{ point }}
-          </li>
-        </ul>
+    <div class="service-card" *ngFor="let service of services$ | async">
+      <div class="icon-wrapper">
+        <i [class]="service.ICON"></i>
       </div>
-    </ng-container>
+
+      <h3>{{ service.TITLE }}</h3>
+      <p>{{ service.INTRO }}</p>
+
+      <ul>
+        <li *ngFor="let point of service.POINTS">{{ point }}</li>
+      </ul>
+    </div>
   </div>
 </section>

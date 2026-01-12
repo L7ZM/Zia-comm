@@ -2,7 +2,7 @@
 $primary-color: #d4af37;
 $secondary-color: #1a1d29;
 $light-color: #f9fafb;
-$card-bg: #1a1d29;
+$card-bg: rgba(255, 255, 255, 0.95);
 $card-border: rgba(212, 175, 55, 0.15);
 $border-radius: 20px;
 $transition-speed: 0.5s;
@@ -25,6 +25,7 @@ $transition-speed: 0.5s;
     border-radius: 50%;
     filter: blur(100px);
     animation: float-slow 25s ease-in-out infinite;
+    z-index: 0;
   }
 
   @media (max-width: 768px) {
@@ -58,7 +59,7 @@ $transition-speed: 0.5s;
           bottom: 0;
           left: 50%;
           transform: translateX(-50%);
-          width: 100px;
+          width: 120px;
           height: 4px;
           background: linear-gradient(90deg, $primary-color, rgba($primary-color, 0.3));
           border-radius: 2px;
@@ -102,13 +103,9 @@ $transition-speed: 0.5s;
         }
 
         .form-group {
-          label {
-            text-align: right;
-          }
+          label { text-align: right; }
           input,
-          textarea {
-            text-align: right;
-          }
+          textarea { text-align: right; }
         }
       }
 
@@ -118,43 +115,38 @@ $transition-speed: 0.5s;
         border: 1px solid $card-border;
         border-radius: $border-radius;
         padding: 2.5rem 2rem;
-        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3), 0 0 40px rgba($primary-color, 0.2);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
         transition: all $transition-speed cubic-bezier(0.34, 1.56, 0.64, 1);
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
 
         &:hover {
-          transform: translateY(-15px) translateZ(30px) rotateX(5deg);
+          transform: translateY(-8px) translateZ(10px);
           border-color: rgba($primary-color, 0.4);
+          box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12), 0 0 20px rgba($primary-color, 0.15);
         }
       }
 
       .contact-form {
-        display: flex;
-        flex-direction: column;
-        gap: 25px;
-
         .form-group {
           display: flex;
           flex-direction: column;
-          text-align: left;
-          margin-bottom: 20px;
+          margin-bottom: 15px;
 
           label {
-            margin-bottom: 16px;
             font-weight: 600;
             color: $primary-color;
-
-            @media (max-width: 768px) {
-              margin-bottom: 14px;
-            }
+            margin-bottom: 12px;
           }
 
           input,
           textarea {
-            padding: 14px 16px;
+            padding: 12px 15px;
             border: 1px solid rgba($primary-color, 0.2);
             border-radius: $border-radius;
             background-color: darken($card-bg, 2%);
-            color: $light-color;
+            color: $secondary-color;
             font-size: 1rem;
             transition: all $transition-speed;
 
@@ -172,12 +164,11 @@ $transition-speed: 0.5s;
             color: #e74c3c;
             font-size: 0.875rem;
             margin-top: 0.25rem;
-            display: block;
           }
         }
 
         .btn-primary {
-          padding: 15px;
+          padding: 14px 20px;
           background: linear-gradient(45deg, $primary-color, lighten($primary-color, 10%));
           border: none;
           border-radius: $border-radius;
@@ -186,12 +177,12 @@ $transition-speed: 0.5s;
           cursor: pointer;
           font-size: 1.05rem;
           transition: all $transition-speed;
-          box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 
           &:hover {
-            transform: translateY(-3px);
+            transform: translateY(-2px);
             background: linear-gradient(45deg, lighten($primary-color, 10%), $primary-color);
-            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.35);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.25);
           }
 
           &:disabled {
@@ -203,25 +194,23 @@ $transition-speed: 0.5s;
       }
 
       .contact-info {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-
         h3 {
           color: $primary-color;
           font-size: 1.8rem;
-          margin-bottom: 25px;
+          margin-bottom: 20px;
         }
 
         .info-item {
           display: flex;
           align-items: center;
-          gap: 15px;
-          color: $light-color;
+          gap: 12px;
+          color: $secondary-color;
+          font-size: 1rem;
 
           i {
             font-size: 1.5rem;
             color: $primary-color;
+            flex-shrink: 0;
           }
         }
 
@@ -248,4 +237,17 @@ $transition-speed: 0.5s;
 @keyframes float-slow {
   0%, 100% { transform: translate(0, 0); }
   50% { transform: translate(-40px, -40px); }
+}
+
+// Utility classes
+.info-link {
+  color: inherit;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: $primary-color;
+    text-decoration: underline;
+  }
 }
