@@ -1,5 +1,4 @@
 import { Component, AfterViewInit } from '@angular/core';
-import gsap from 'gsap';
 import { RouterModule } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 @Component({
@@ -9,7 +8,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   styleUrls: ['./about.component.scss'],
   imports:[RouterModule,TranslateModule]
 })
-export class AboutComponent implements AfterViewInit {
+export class AboutComponent {
   currentLang: string;
 
   constructor(private translate: TranslateService) {
@@ -19,13 +18,4 @@ export class AboutComponent implements AfterViewInit {
     });
   }
 
-  ngAfterViewInit(): void {
-    gsap.from('.about-page > *', {
-      y: 30,
-      opacity: 0,
-      duration: 0.8,
-      stagger: 0.2,
-      ease: 'power2.out'
-    });
-  }
 }

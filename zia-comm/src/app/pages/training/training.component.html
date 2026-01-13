@@ -1,41 +1,82 @@
 <section class="training-section" [dir]="currentLang === 'ar' ? 'rtl' : 'ltr'">
   <div class="training-container">
 
-    <!-- HEADER / INTRO -->
+    <!-- HEADER -->
     <div class="training-header">
       <h2>{{ 'TRAINING.TITLE' | translate }}</h2>
       <p>{{ 'TRAINING.SUBTITLE' | translate }}</p>
     </div>
 
-    <!-- TRAINING CONTENT GRID -->
-    <div class="training-grid">
-      <ng-container *ngIf="features$ | async as features">
-        <div class="training-card" *ngFor="let feature of features">
-          <div class="icon-wrapper-training">
-            <i [class]="feature.ICON"></i>
-          </div>
-          <h3>{{ feature.TITLE }}</h3>
-          <p>{{ feature.DESC }}</p>
+    <!-- TRAINING CARDS -->
+    <div
+      class="training-grid"
+      [class.single-card]="trainings.length === 1"
+      [class.two-cards]="trainings.length === 2"
+    >
+
+      <!-- No trainings message -->
+      <div *ngIf="trainings.length === 0" class="no-trainings">
+        <div class="no-trainings-content">
+          <i class="fas fa-calendar-times"></i>
+          <h3>{{ 'TRAINING.NO_TRAININGS' | translate }}</h3>
+          <p>{{ 'TRAINING.CHECK_LATER' | translate }}</p>
         </div>
-      </ng-container>
-    </div>
+      </div>
 
-    <!-- ADDITIONAL DETAILS -->
-    <div class="training-details-extended">
-      <h3>{{ 'TRAINING.DETAILS_TITLE' | translate }}</h3>
-      <ul>
-        <li *ngFor="let point of ('TRAINING.DETAILS_POINTS' | translate)">
-          <i class="fas fa-check-circle"></i> {{ point }}
-        </li>
-      </ul>
-      <p [innerHTML]="'TRAINING.LOCATION' | translate"></p>
-    </div>
+      <!-- Training cards -->
+      <div
+        class="training-card"
+        *ngFor="let t of trainings; let i = index"
+        [attr.data-index]="i"
+      >
 
-    <!-- CTA / BUTTON -->
-    <div class="training-cta">
-      <a class="btn btn-training" routerLink="/contact">
-        {{ 'TRAINING.CTA' | translate }}
-      </a>
+        <!-- Icon -->
+        <div class="icon-wrapper-training">
+          <i class="fas fa-graduation-cap"></i>
+        </div>
+
+        <!-- Title (from Excel) -->
+        <h3>{{ t.title }}</h3>
+
+        <!-- Description (from Excel) -->
+        <p class="training-description">{{ t.description }}</p>
+
+        <!-- Meta Information (from Excel) -->
+        <ul class="training-meta">
+          <li>
+            <i class="fas fa-calendar-alt"></i>
+            <span class="meta-value">{{ t.date }}</span>
+          </li>
+          <li>
+            <i class="fas fa-map-marker-alt"></i>
+            <span class="meta-value">{{ t.city }}</span>
+          </li>
+          <li>
+            <i class="fas fa-clock"></i>
+            <span class="meta-value">{{ t.duration }}</span>
+          </li>
+          <li>
+            <i class="fas fa-tag"></i>
+            <span class="meta-value price">{{ t.price }}</span>
+          </li>
+          <li *ngIf="t.target">
+            <i class="fas fa-users"></i>
+            <span class="meta-value">{{ t.target }}</span>
+          </li>
+        </ul>
+
+        <!-- CTA Button (direct link from Excel) -->
+
+        <a class="btn btn-training"
+          [href]="t.formLink"
+          target="_blank"
+          rel="noopener"
+        >
+          <span>{{ 'TRAINING.APPLY_NOW' | translate }}</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+
+      </div>
     </div>
 
   </div>
