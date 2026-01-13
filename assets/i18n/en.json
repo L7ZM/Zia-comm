@@ -1,0 +1,267 @@
+{
+  "HEADER": {
+    "HOME": "Home",
+    "TRAINING": "Training",
+    "SERVICES": "Services",
+    "CLIENTS": "Clients",
+    "ABOUT": "About",
+    "CONTACT": "Contact"
+  },
+  "FOOTER": {
+    "TAGLINE": "Business strategy consulting, digitalization, and artificial intelligence.",
+    "NAV": {
+      "TITLE": "Navigation",
+      "HOME": "Home",
+      "SERVICES": "Services",
+      "TRAINING": "AI Training",
+      "ABOUT": "About",
+      "CONTACT": "Contact"
+    },
+    "SOCIAL": {
+      "TITLE": "Follow us"
+    },
+    "COPYRIGHT": "© {{year}} Zia Comm. All rights reserved."
+  },
+  "ABOUT": {
+    "HERO": {
+      "TITLE": "Build, transform and grow",
+      "SUBTITLE": "today's and tomorrow's businesses",
+      "TEXT": "ZIA COMM is a firm specialized in business strategy, digitalization, and AI integration. We help companies structure growth, optimize performance, and adopt differentiating technologies."
+    },
+    "FOUNDER": {
+      "TITLE": "A vision backed by experience",
+      "TEXT1": "Founded by <strong>Fouzia Azmi</strong>, ZIA COMM draws on over 16 years of experience in business development, team management, digital transformation, and strategic consulting.",
+      "TEXT2": "Having evolved in demanding environments—retail, training, consulting, and commercial direction—Fouzia developed a unique approach: combining strategy, technology, and human intelligence to create more performant and resilient organizations.",
+      "TEXT3": "Today, she supports leaders, teams, and entrepreneurs in implementing efficient, automated, results-oriented systems."
+    },
+    "MISSION": {
+      "TITLE": "Our philosophy",
+      "CARDS": {
+        "STRATEGY": { "TITLE": "Strategic clarity", "TEXT": "We help companies define a clear, measurable direction aligned with their ambitions." },
+        "TECH": { "TITLE": "Useful technology", "TEXT": "AI and automation are not gadgets: they are powerful levers to save time and boost performance." },
+        "HUMAN": { "TITLE": "Human-centered", "TEXT": "Transformation only makes sense if it strengthens teams, skills, and internal culture." }
+      }
+    },
+    "METHOD": {
+      "TITLE": "Our method",
+      "STEPS": {
+        "STEP1": { "TITLE": "Diagnosis & analysis", "TEXT": "Understand your market, processes, and goals." },
+        "STEP2": { "TITLE": "Strategy & action plan", "TEXT": "Build a clear, realistic, ROI-focused roadmap." },
+        "STEP3": { "TITLE": "Digitalization & AI", "TEXT": "Implement smart tools to automate and optimize." },
+        "STEP4": { "TITLE": "Support & skills building", "TEXT": "Train, guide, and support teams through transformation." }
+      }
+    },
+    "PROOF": {
+      "TITLE": "What sets us apart",
+      "ITEMS": {
+        "EXPERIENCE": "16+ years field experience",
+        "PERFORMANCE": "Performance & results-oriented approach",
+        "IA": "AI expertise applied to business",
+        "HUMAN": "Human & educational support"
+      }
+    },
+    "CTA": {
+      "TITLE": "Ready to transform your business?",
+      "TEXT": "We support you every step of your growth.",
+      "BUTTON": "Discuss your project"
+    }
+  },
+  "CLIENTS": {
+    "TITLE": "Our Clients",
+    "SUBTITLE": "They trust us",
+    "LIST": [
+      { "NAME": "MIAfrica", "DESCRIPTION": "Global innovation partner in Africa." },
+      { "NAME": "IPF ADVISORS", "DESCRIPTION": "Strategic financial consulting services." },
+      { "NAME": "NLD NO LIMIT DEVELOPMENT", "DESCRIPTION": "Excellence activator." },
+      { "NAME": "S4U", "DESCRIPTION": "Smart solutions for you." },
+      { "NAME": "BOTANIKA MARRAKECH", "DESCRIPTION": "Luxury botanical experiences." },
+      { "NAME": "AXIAL FACILITIES", "DESCRIPTION": "Precise facilities management." }
+    ]
+  },
+  "HOME": {
+    "HERO": {
+      "TITLE": "Accelerate your commercial performance",
+      "SUBTITLE": "through digital strategy & AI",
+      "TEXT": "ZIA COMM supports companies and professionals in structuring, digitalizing, and automating growth.",
+      "BTN_SERVICES": "Our services",
+      "BTN_TRAINING": "AI Training"
+    },
+    "WWD": {
+      "TITLE": "What we do",
+      "TEXT": "At <strong>ZIA COMM</strong>, we transform companies with commercial, digital, and AI-based automation strategies grounded in experience, data, and artificial intelligence.",
+      "CARDS": {
+        "STRATEGY": { "TITLE": "Tailored strategies", "TEXT": "Market analysis, strategic positioning, and customized commercial action plan." },
+        "MARKETING": { "TITLE": "Digital Marketing", "TEXT": "High-performing digital plans, community management, campaign optimization, and SEO." },
+        "AI": { "TITLE": "AI Integration", "TEXT": "Intelligent automation solutions, data analysis, and AI tools for efficiency gains." }
+      }
+    },
+    "WHY": {
+      "TITLE": "Why choose ZIA COMM?",
+      "ITEM1": "Recognized expertise & field credibility",
+      "ITEM2": "Custom strategic solutions",
+      "ITEM3": "Smart AI integration"
+    },
+    "TESTIMONIALS": {
+      "TITLE": "Leadership & Expertise",
+      "QUOTE1": "In a rapidly evolving digital world, embracing AI isn’t optional—it’s essential. I help professionals transform their strategies and unlock new opportunities through clarity, courage, and intelligent innovation.",
+      "QUOTE2": "AI is not here to replace humans but to transform—learning, experimenting, and adapting are key."
+    }
+  },
+"SERVICES": {
+  "TITLE": "Our Services",
+  "SUBTITLE": "Discover our customized solutions to boost your business.",
+  "ITEMS": [
+    {
+      "TITLE": "Business Strategy Consulting",
+      "INTRO": "Comprehensive market analysis, strategic positioning, and tailored commercial action plans to drive growth and performance.",
+      "POINTS": [
+        "Market analysis and strategic positioning",
+        "Business development and action planning",
+        "Custom commercial department setup"
+      ],
+      "ICON": "fas fa-chart-line"
+    },
+    {
+      "TITLE": "Digital Marketing Solutions",
+      "INTRO": "High-impact digital marketing strategies to enhance your online presence.",
+      "POINTS": [
+        "Define clear marketing objectives",
+        "Adapt strategies for B2B, B2C, and e-commerce",
+        "Deliver messages that resonate with your target audience"
+      ],
+      "ICON": "fas fa-bullhorn"
+    },
+    {
+      "TITLE": "Artificial Intelligence Integration",
+      "INTRO": "Implement intelligent automation and AI solutions to boost efficiency.",
+      "POINTS": [
+        "Automation opportunities",
+        "Custom AI solutions",
+        "Data-driven optimization"
+      ],
+      "ICON": "fas fa-robot"
+    },
+    {
+      "TITLE": "SaaS & Productivity Solutions",
+      "INTRO": "Boost your productivity with modern SaaS tools.",
+      "POINTS": [
+        "Task management and collaboration",
+        "Performance dashboards",
+        "Secure cloud storage"
+      ],
+      "ICON": "fas fa-cloud"
+    },
+    {
+      "TITLE": "Process Digitalization",
+      "INTRO": "Transform your operations with smart digital tools.",
+      "POINTS": [
+        "Workflow optimization",
+        "Custom digital solutions",
+        "Team training"
+      ],
+      "ICON": "fas fa-laptop-code"
+    },
+    {
+      "TITLE": "Marketing & Digital Presence",
+      "INTRO": "Maximize your market impact and online visibility.",
+      "POINTS": [
+        "Content creation and community management",
+        "SEO and campaign optimization",
+        "Audience engagement strategies"
+      ],
+      "ICON": "fas fa-bullseye"
+    }
+  ]
+}
+
+,
+"TRAINING": {
+  "TITLE": "Artificial Intelligence Training",
+  "SUBTITLE": "Practical, comprehensive training to integrate AI into your professional daily life.",
+  "FEATURES": [
+    {
+      "ICON": "fas fa-brain",
+      "TITLE": "Hands-on Learning",
+      "DESC": "Interactive sessions based on real cases and modern tools to apply AI immediately."
+    },
+    {
+      "ICON": "fas fa-clock",
+      "TITLE": "Time Efficiency",
+      "DESC": "Automate repetitive tasks and optimize your organization to focus on value-added work."
+    },
+    {
+      "ICON": "fas fa-cogs",
+      "TITLE": "Organizational Optimization",
+      "DESC": "Techniques to improve individual and team productivity."
+    },
+    {
+      "ICON": "fas fa-chart-line",
+      "TITLE": "Data & AI Analysis",
+      "DESC": "Use data and artificial intelligence for strategic decision-making."
+    },
+    {
+      "ICON": "fas fa-lightbulb",
+      "TITLE": "Tailored Strategies",
+      "DESC": "Develop custom solutions adapted to your industry and goals."
+    },
+    {
+      "ICON": "fas fa-users",
+      "TITLE": "Professional Support",
+      "DESC": "Continuous support, Q&A, and personalized guidance to integrate AI into your projects."
+    }
+  ],
+  "DETAILS_TITLE": "What you will learn:",
+  "DETAILS_POINTS": [
+    "Use advanced AI tools to automate daily tasks.",
+    "Optimize your time management and internal processes.",
+    "Analyze data to make informed decisions and boost business performance.",
+    "Create intelligent workflows to increase efficiency and reduce errors.",
+    "Develop custom strategies tailored to your industry and business goals.",
+    "Deploy digital tools to enhance customer experience and online visibility.",
+    "Understand machine learning and intelligent automation concepts, even without prior technical knowledge."
+  ],
+  "LOCATION": "Sessions are regularly held in <strong>Rabat</strong>, in small groups to encourage interaction and hands-on learning. Pre-registration is open to secure your spot.",
+  "CTA": "Request information",
+  "APPLY_NOW": "Apply Now"
+}
+,
+  "CONTACT": {
+    "TITLE": "Let's get in touch",
+    "SUBTITLE": "A question, project, collaboration? Happy to chat.",
+    "FORM": {
+      "NAME": "Full name",
+      "NAME_PLACEHOLDER": "Your name",
+      "EMAIL": "Email",
+      "EMAIL_PLACEHOLDER": "Your email",
+      "SUBJECT": "Subject",
+      "SUBJECT_PLACEHOLDER": "Message subject",
+      "MESSAGE": "Message",
+      "MESSAGE_PLACEHOLDER": "Your message...",
+      "SUBMIT": "Send the message",
+      "SUCCESS": "Sent",
+      "VALIDATION": {
+        "NAME_REQUIRED": "Name required",
+        "NAME_MINLENGTH": "Name at least {{min}} chars",
+        "EMAIL_REQUIRED": "Email required",
+        "EMAIL_INVALID": "Valid email please",
+        "SUBJECT_REQUIRED": "Subject required",
+        "MESSAGE_REQUIRED": "Message required",
+        "MESSAGE_MINLENGTH": "Message at least {{min}} chars"
+      }
+    },
+    "INFO": {
+      "TITLE": "Information",
+      "EMAIL": "contact@ziacomm.com",
+      "PHONE": "+212 6 00 00 00 00",
+      "LOCATION": "Casablanca, Morocco"
+    }
+  },
+  "WHATSAPP": {
+    "chatNow": "Chat now",
+    "greeting": "Hello! I would like to chat.",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send via WhatsApp"
+  }
+}

@@ -1,0 +1,291 @@
+{
+  "HEADER": {
+    "HOME": "Accueil",
+    "TRAINING": "Formations",
+    "SERVICES": "Services",
+    "CLIENTS": "Clients",
+    "ABOUT": "À propos",
+    "CONTACT": "Contact"
+  },
+
+  "FOOTER": {
+    "TAGLINE": "Conseil en stratégie commerciale, digitalisation et intelligence artificielle.",
+    "NAV": {
+      "TITLE": "Navigation",
+      "HOME": "Accueil",
+      "SERVICES": "Services",
+      "TRAINING": "Formations IA",
+      "ABOUT": "À propos",
+      "CONTACT": "Contact"
+    },
+    "SOCIAL": {
+      "TITLE": "Suivez-nous"
+    },
+    "COPYRIGHT": "© {{year}} Zia Comm. Tous droits réservés."
+  },
+
+  "ABOUT": {
+    "HERO": {
+      "TITLE": "Construire, transformer et faire grandir",
+      "SUBTITLE": "les entreprises d’aujourd’hui et de demain",
+      "TEXT": "ZIA COMM est un cabinet spécialisé dans la stratégie commerciale, la digitalisation et l’intégration de l’intelligence artificielle. Nous aidons les entreprises à structurer leur croissance, optimiser leurs performances et adopter les technologies qui font la différence."
+    },
+    "FOUNDER": {
+      "TITLE": "Une vision portée par l’expérience",
+      "TEXT1": "Fondée par <strong>Fouzia Azmi</strong>, ZIA COMM s’appuie sur plus de 16 années d’expérience dans le développement commercial, la gestion d’équipes, la transformation digitale et l’accompagnement stratégique.",
+      "TEXT2": "Après avoir évolué dans des environnements exigeants — retail, formation, consulting et direction commerciale — Fouzia a développé une approche unique : allier stratégie, technologie et intelligence humaine pour créer des organisations plus performantes et plus résilientes.",
+      "TEXT3": "Aujourd’hui, elle accompagne dirigeants, équipes et entrepreneurs dans la mise en place de systèmes efficaces, automatisés et orientés résultats."
+    },
+    "MISSION": {
+      "TITLE": "Notre philosophie",
+      "CARDS": {
+        "STRATEGY": {
+          "TITLE": "Clarté stratégique",
+          "TEXT": "Nous aidons les entreprises à définir une direction claire, mesurable et alignée avec leurs ambitions."
+        },
+        "TECH": {
+          "TITLE": "Technologie utile",
+          "TEXT": "L’IA et l’automatisation ne sont pas des gadgets : ce sont des leviers puissants pour gagner du temps et augmenter la performance."
+        },
+        "HUMAN": {
+          "TITLE": "Humain au centre",
+          "TEXT": "La transformation n’a de sens que si elle renforce les équipes, les compétences et la culture interne."
+        }
+      }
+    },
+    "METHOD": {
+      "TITLE": "Notre méthode",
+      "STEPS": {
+        "STEP1": { "TITLE": "Diagnostic & analyse", "TEXT": "Comprendre votre marché, vos processus et vos objectifs." },
+        "STEP2": { "TITLE": "Stratégie & plan d’action", "TEXT": "Construire une feuille de route claire, réaliste et orientée ROI." },
+        "STEP3": { "TITLE": "Digitalisation & IA", "TEXT": "Mettre en place des outils intelligents pour automatiser et optimiser." },
+        "STEP4": { "TITLE": "Accompagnement & montée en compétences", "TEXT": "Former, guider et soutenir vos équipes dans la transformation." }
+      }
+    },
+    "PROOF": {
+      "TITLE": "Ce qui nous distingue",
+      "ITEMS": {
+        "EXPERIENCE": "16+ ans d’expérience terrain",
+        "PERFORMANCE": "Approche orientée performance & résultats",
+        "IA": "Expertise en IA appliquée au business",
+        "HUMAN": "Accompagnement humain & pédagogique"
+      }
+    },
+    "CTA": {
+      "TITLE": "Prêt à transformer votre business ?",
+      "TEXT": "Nous vous accompagnons dans chaque étape de votre croissance.",
+      "BUTTON": "Discutons de votre projet"
+    }
+  },
+
+  "CLIENTS": {
+    "TITLE": "Nos Clients",
+    "SUBTITLE": "Ils nous font confiance",
+    "LIST": [
+      { "NAME": "MIAfrica", "DESCRIPTION": "Partenaire mondial de l'innovation en Afrique." },
+      { "NAME": "IPF ADVISORS", "DESCRIPTION": "Services de conseil financier stratégique." },
+      { "NAME": "NLD NO LIMIT DEVELOPMENT", "DESCRIPTION": "Activateur d'excellence." },
+      { "NAME": "S4U", "DESCRIPTION": "Solutions intelligentes pour vous." },
+      { "NAME": "BOTANIKA MARRAKECH", "DESCRIPTION": "Expériences botaniques de luxe." },
+      { "NAME": "AXIAL FACILITIES", "DESCRIPTION": "Gestion des installations avec précision." }
+    ]
+  },
+
+
+  "HOME": {
+    "HERO": {
+      "TITLE": "Accélérez votre performance commerciale",
+      "SUBTITLE": "grâce à la stratégie digitale & l’IA",
+      "TEXT": "ZIA COMM accompagne les entreprises et les professionnels dans la structuration, la digitalisation et l’automatisation de leur croissance.",
+      "BTN_SERVICES": "Nos services",
+      "BTN_TRAINING": "Formations IA"
+    },
+    "WWD": {
+      "TITLE": "Ce que nous faisons",
+      "TEXT": "Chez <strong>ZIA COMM</strong>, nous transformons les entreprises avec des stratégies commerciales, digitales et d’automatisation basées sur l’expérience, la data et l’intelligence artificielle.",
+      "CARDS": {
+        "STRATEGY": {
+          "TITLE": "Stratégies sur mesure",
+          "TEXT": "Analyse du marché, positionnement stratégique et plan d’action commercial adapté à votre business."
+        },
+        "MARKETING": {
+          "TITLE": "Marketing Digital",
+          "TEXT": "Plans digitaux performants, gestion de communautés, optimisation de campagnes et référencement."
+        },
+        "AI": {
+          "TITLE": "Intégration IA",
+          "TEXT": "Solutions d’automatisation intelligente, analyse de données et outils IA pour gagner en efficacité."
+        }
+      }
+    },
+    "WHY": {
+      "TITLE": "Pourquoi choisir ZIA COMM ?",
+      "ITEM1": "Expertise reconnue & crédibilité terrain",
+      "ITEM2": "Solutions stratégiques et personnalisées",
+      "ITEM3": "Intégration intelligente de l’IA"
+    },
+    "TESTIMONIALS": {
+      "TITLE": "Leadership & Expertise",
+      "QUOTE1": "Dans un monde numérique en constante évolution, adopter l’IA n’est pas une option — c’est un impératif. Je soutiens les professionnels dans leur transformation stratégique et l’ouverture de nouvelles opportunités grâce à la clarté, le courage et l’innovation intelligente.",
+      "QUOTE2": "L’IA n’est pas là pour remplacer l’humain mais pour transformer — apprendre, expérimenter et s’adapter sont les clés."
+    }
+  },
+
+
+"SERVICES": {
+  "TITLE": "Nos Services",
+  "SUBTITLE": "Découvrez nos solutions personnalisées pour booster votre entreprise.",
+  "ITEMS": [
+    {
+      "TITLE": "Stratégies Commerciales",
+      "INTRO": "Optimisez votre croissance avec nos solutions sur mesure :",
+      "POINTS": [
+        "Études de marché et positionnement stratégique",
+        "Développement commercial et plan d'action",
+        "Mise en place de départements commerciaux personnalisés"
+      ],
+      "ICON": "fas fa-chart-line"
+    },
+    {
+      "TITLE": "Stratégies Marketing",
+      "INTRO": "Maximisez votre impact sur le marché :",
+      "POINTS": [
+        "Définition d'objectifs marketing clairs",
+        "Stratégies adaptées aux secteurs B2B, B2C et e-commerce",
+        "Messages percutants pour votre audience cible"
+      ],
+      "ICON": "fas fa-bullhorn"
+    },
+    {
+      "TITLE": "Marketing Digital",
+      "INTRO": "Établissez une présence en ligne performante :",
+      "POINTS": [
+        "Création de contenu engageant",
+        "Gestion des réseaux sociaux",
+        "Optimisation des performances digitales"
+      ],
+      "ICON": "fas fa-laptop-code"
+    },
+    {
+      "TITLE": "Solutions SaaS",
+      "INTRO": "Boostez votre productivité :",
+      "POINTS": [
+        "Gestion des tâches et collaboration",
+        "Tableaux de bord de suivi",
+        "Stockage sécurisé en ligne"
+      ],
+      "ICON": "fas fa-cloud"
+    },
+    {
+      "TITLE": "Digitalisation des Processus",
+      "INTRO": "Transformez vos opérations :",
+      "POINTS": [
+        "Optimisation des workflows",
+        "Solutions numériques adaptées",
+        "Formation des équipes"
+      ],
+      "ICON": "fas fa-cogs"
+    },
+    {
+      "TITLE": "Intégration de l’IA",
+      "INTRO": "Révolutionnez votre approche :",
+      "POINTS": [
+        "Opportunités d’automatisation",
+        "Solutions IA personnalisées",
+        "Optimisation basée sur la data"
+      ],
+      "ICON": "fas fa-robot"
+    }
+  ]
+}
+,
+
+
+  "TRAINING": {
+    "TITLE": "Formation en Intelligence Artificielle",
+    "SUBTITLE": "Une formation pratique et complète pour intégrer l’IA dans votre quotidien professionnel.",
+    "FEATURES": [
+      {
+        "ICON": "fas fa-brain",
+        "TITLE": "Apprentissage pratique",
+        "DESC": "Sessions interactives basées sur des cas réels et outils modernes, pour appliquer l’IA immédiatement."
+      },
+      {
+        "ICON": "fas fa-clock",
+        "TITLE": "Gain de temps",
+        "DESC": "Automatisation des tâches répétitives et organisation optimisée pour se concentrer sur la valeur ajoutée."
+      },
+      {
+        "ICON": "fas fa-cogs",
+        "TITLE": "Optimisation organisationnelle",
+        "DESC": "Techniques pour améliorer la productivité individuelle et collective."
+      },
+      {
+        "ICON": "fas fa-chart-line",
+        "TITLE": "Analyse & IA",
+        "DESC": "Exploitation des données et intelligence artificielle pour la prise de décision stratégique."
+      },
+      {
+        "ICON": "fas fa-lightbulb",
+        "TITLE": "Stratégies sur mesure",
+        "DESC": "Développement de solutions personnalisées adaptées à votre secteur et vos objectifs."
+      },
+      {
+        "ICON": "fas fa-users",
+        "TITLE": "Accompagnement professionnel",
+        "DESC": "Support continu, Q&A et conseils personnalisés pour intégrer l’IA dans vos projets."
+      }
+    ],
+    "DETAILS_TITLE": "Ce que vous allez apprendre :",
+    "DETAILS_POINTS": [
+      "Utiliser des outils d’IA avancés pour automatiser vos tâches quotidiennes.",
+      "Optimiser la gestion de votre temps et vos processus internes.",
+      "Analyser les données pour prendre des décisions éclairées et augmenter la performance de votre entreprise.",
+      "Créer des workflows intelligents pour gagner en efficacité et réduire les erreurs.",
+      "Développer des stratégies sur mesure adaptées à votre secteur et vos objectifs commerciaux.",
+      "Déployer des outils numériques pour améliorer l’expérience client et la visibilité de votre entreprise.",
+      "Comprendre les concepts de machine learning et d’automatisation intelligente, même sans compétences techniques préalables."
+    ],
+    "LOCATION": "Les sessions sont régulièrement organisées à <strong>Rabat</strong>, en petits groupes pour favoriser l’interaction et l’apprentissage pratique. Préinscriptions ouvertes pour les prochaines dates afin de garantir votre place.",
+    "CTA": "Demander des informations",
+    "APPLY_NOW": "Postuler maintenant"
+  },
+
+
+  "CONTACT": {
+  "TITLE": "Entrons en contact",
+  "SUBTITLE": "Une question, un projet, une collaboration ? Je serai ravie d’échanger avec vous.",
+  "FORM": {
+    "NAME": "Nom complet",
+    "NAME_PLACEHOLDER": "Votre nom",
+    "EMAIL": "Email",
+    "EMAIL_PLACEHOLDER": "Votre email",
+    "SUBJECT": "Objet",
+    "SUBJECT_PLACEHOLDER": "Sujet de votre message",
+    "MESSAGE": "Message",
+    "MESSAGE_PLACEHOLDER": "Votre message...",
+    "SUBMIT": "Envoyer le message",
+    "SUCCESS": "Envoyé",
+    "VALIDATION": {
+        "NAME_REQUIRED": "Le nom est requis",
+        "NAME_MINLENGTH": "Le nom doit contenir au moins {{min}} caractères",
+        "EMAIL_REQUIRED": "L'email est requis",
+        "EMAIL_INVALID": "Veuillez entrer un email valide",
+        "SUBJECT_REQUIRED": "Le sujet est requis",
+        "MESSAGE_REQUIRED": "Le message est requis",
+        "MESSAGE_MINLENGTH": "Le message doit contenir au moins {{min}} caractères"
+      }
+  },
+  "INFO": {
+    "TITLE": "Informations",
+    "EMAIL": "contact@ziacomm.com",
+    "PHONE": "+212 6 00 00 00 00",
+    "LOCATION": "Casablanca, Maroc"
+  }
+},
+
+
+  "WHATSAPP": {
+    "chatNow": "Discutez maintenant"
+  }
+}
