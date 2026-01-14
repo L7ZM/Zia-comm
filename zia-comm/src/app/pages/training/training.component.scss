@@ -1,7 +1,3 @@
-/* ============================================
-   PREMIUM TRAINING SECTION - GOLD & BLACK
-   ============================================ */
-
 // Color Palette
 $primary: #D4AF37;       // gold accent
 $accent: #C0A938;
@@ -11,143 +7,33 @@ $dark-bg: #111111;       // dark cards / navbar
 $text-color: #1a1d29;
 $light-text: #FFFFFF;
 
-/* TRAINING SECTION */
-.training-section {
-  background: linear-gradient(180deg, $light-bg 0%, #FFFFFF 50%, $light-bg 100%);
-  padding: 7rem 2rem;
-  position: relative;
-  overflow: hidden;
-  min-height: 100vh;
 
-  // Subtle gradient overlays
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 800px;
-    height: 800px;
-    background: radial-gradient(circle, rgba(212, 175, 55, 0.04), transparent 70%);
-    border-radius: 50%;
-    filter: blur(120px);
-    pointer-events: none;
-  }
 
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 700px;
-    height: 700px;
-    background: radial-gradient(circle, rgba(17, 17, 17, 0.03), transparent 70%);
-    border-radius: 50%;
-    filter: blur(120px);
-    pointer-events: none;
-  }
 
-  @media (max-width: 768px) {
-    padding: 5rem 1.5rem;
-  }
 
-  @media (max-width: 480px) {
-    padding: 4rem 1rem;
-  }
-}
-
-.training-container {
-  max-width: 1400px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 2;
-}
-
-/* HEADER SECTION */
-.training-header {
-  text-align: center;
-  margin-bottom: 6rem;
-  animation: fadeInDown 0.8s ease;
-
-  @media (max-width: 768px) {
-    margin-bottom: 4rem;
-  }
-
-  h2 {
-    font-size: 3.75rem;
-    font-weight: 800;
-    color: $secondary;
-    margin-bottom: 1rem;
-    position: relative;
-    display: inline-block;
-    letter-spacing: -0.02em;
-
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: -20px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 140px;
-      height: 6px;
-      background: linear-gradient(90deg, $primary, $accent);
-      border-radius: 3px;
-    }
-
-    @media (max-width: 1023px) {
-      font-size: 3rem;
-    }
-
-    @media (max-width: 767px) {
-      font-size: 2.25rem;
-    }
-
-    @media (max-width: 480px) {
-      font-size: 1.9rem;
-    }
-  }
-
-  p {
-    font-size: 1.3rem;
-    line-height: 1.7;
-    color: #555555;
-    max-width: 800px;
-    margin: 3rem auto 0;
-    font-weight: 400;
-
-    @media (max-width: 767px) {
-      font-size: 1.15rem;
-      margin-top: 2.5rem;
-    }
-
-    @media (max-width: 480px) {
-      font-size: 1.05rem;
-    }
-  }
-}
-
-/* TRAINING GRID */
+/* TRAINING GRID - SMALLER CARDS */
 .training-grid {
   display: grid;
-  gap: 3rem;
+  gap: 2rem;
   margin-bottom: 3rem;
 
   @media (min-width: 1200px) {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr); // 3 columns for smaller cards
   }
 
   @media (min-width: 768px) and (max-width: 1199px) {
     grid-template-columns: repeat(2, 1fr);
-    gap: 2.5rem;
+    gap: 1.75rem;
   }
 
   @media (max-width: 767px) {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1.5rem;
   }
 
   &.single-card {
     grid-template-columns: 1fr;
-    max-width: 850px;
+    max-width: 600px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -155,6 +41,9 @@ $light-text: #FFFFFF;
   &.two-cards {
     @media (min-width: 768px) {
       grid-template-columns: repeat(2, 1fr);
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     @media (max-width: 767px) {
@@ -163,77 +52,18 @@ $light-text: #FFFFFF;
   }
 }
 
-/* NO TRAININGS STATE */
-.no-trainings {
-  grid-column: 1 / -1;
-  text-align: center;
-  padding: 5rem 2rem;
-
-  .no-trainings-content {
-    background: $light-text;
-    padding: 5rem 4rem;
-    border-radius: 28px;
-    border: 2px dashed rgba(212, 175, 55, 0.3);
-    max-width: 700px;
-    margin: 0 auto;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
-    transition: all 0.4s ease;
-
-    &:hover {
-      border-color: $primary;
-      box-shadow: 0 12px 40px rgba(212, 175, 55, 0.15);
-    }
-
-    i {
-      font-size: 5rem;
-      color: rgba(212, 175, 55, 0.5);
-      margin-bottom: 2rem;
-      display: block;
-    }
-
-    h3 {
-      font-size: 2rem;
-      color: $secondary;
-      margin-bottom: 1rem;
-      font-weight: 700;
-    }
-
-    p {
-      font-size: 1.2rem;
-      color: #666666;
-      margin: 0;
-    }
-
-    @media (max-width: 767px) {
-      padding: 4rem 2.5rem;
-
-      i {
-        font-size: 4rem;
-      }
-
-      h3 {
-        font-size: 1.75rem;
-      }
-
-      p {
-        font-size: 1.1rem;
-      }
-    }
-  }
-}
-
-/* PREMIUM TRAINING CARDS */
+/* COMPACT TRAINING CARDS */
 .training-card {
   background: $light-text;
-  padding: 3.5rem;
-  border-radius: 24px;
+  padding: 2rem;
+  border-radius: 16px;
   border: 1px solid rgba(0, 0, 0, 0.08);
   transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
   position: relative;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
   cursor: pointer;
 
   // Gradient overlay on hover
@@ -257,15 +87,15 @@ $light-text: #FFFFFF;
     top: 0;
     left: 0;
     width: 0;
-    height: 5px;
+    height: 4px;
     background: linear-gradient(90deg, $primary, $accent);
     transition: width 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
 
   &:hover {
-    transform: translateY(-12px);
+    transform: translateY(-8px);
     border-color: rgba(212, 175, 55, 0.3);
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12),
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1),
                 0 0 0 1px rgba(212, 175, 55, 0.1);
 
     &::before {
@@ -279,149 +109,108 @@ $light-text: #FFFFFF;
     .icon-wrapper-training {
       transform: scale(1.1) rotate(-5deg);
       background: linear-gradient(135deg, $primary, $accent);
-      box-shadow: 0 12px 30px rgba(212, 175, 55, 0.35);
+      box-shadow: 0 8px 20px rgba(212, 175, 55, 0.35);
 
       i {
         color: $light-text;
-        transform: scale(1.1);
+        transform: scale(1.05);
       }
     }
-
-    .training-badge {
-      background: $primary;
-      color: $light-text;
-    }
-  }
-
-  @media (max-width: 1199px) {
-    padding: 3rem;
   }
 
   @media (max-width: 767px) {
-    padding: 2.5rem;
+    padding: 1.75rem;
   }
 
   @media (max-width: 480px) {
-    padding: 2rem;
+    padding: 1.5rem;
   }
 }
 
-/* ICON WRAPPER */
+/* COMPACT ICON WRAPPER */
 .icon-wrapper-training {
-  width: 85px;
-  height: 85px;
+  width: 65px;
+  height: 65px;
   background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(192, 169, 56, 0.05));
-  border-radius: 20px;
+  border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1.25rem;
   transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
   position: relative;
 
   i {
-    font-size: 2.5rem;
+    font-size: 1.9rem;
     color: $primary;
     transition: all 0.4s ease;
   }
 
   @media (max-width: 767px) {
-    width: 75px;
-    height: 75px;
+    width: 60px;
+    height: 60px;
 
     i {
-      font-size: 2.2rem;
+      font-size: 1.75rem;
     }
   }
 }
 
-/* TRAINING BADGE (Optional - add if needed) */
-.training-badge {
-  position: absolute;
-  top: 2rem;
-  right: 2rem;
-  background: rgba(212, 175, 55, 0.1);
-  color: $primary;
-  padding: 0.5rem 1.2rem;
-  border-radius: 50px;
-  font-size: 0.85rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  transition: all 0.3s ease;
-
-  @media (max-width: 767px) {
-    top: 1.5rem;
-    right: 1.5rem;
-    font-size: 0.75rem;
-    padding: 0.4rem 1rem;
-  }
-}
-
-/* CARD TITLE */
+/* COMPACT CARD TITLE */
 .training-card h3 {
-  font-size: 2.1rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: $secondary;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   line-height: 1.3;
   letter-spacing: -0.01em;
 
-  @media (max-width: 1199px) {
-    font-size: 1.9rem;
-  }
-
   @media (max-width: 767px) {
-    font-size: 1.65rem;
+    font-size: 1.35rem;
   }
 
   @media (max-width: 480px) {
-    font-size: 1.45rem;
+    font-size: 1.25rem;
   }
 }
 
-/* DESCRIPTION */
+/* COMPACT DESCRIPTION */
 .training-description {
-  font-size: 1.15rem;
-  line-height: 1.75;
+  font-size: 0.95rem;
+  line-height: 1.6;
   color: #555555;
-  margin-bottom: 2.5rem;
-  min-height: 100px;
-  border-left: 4px solid $primary;
-  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+  min-height: 70px;
+  border-left: 3px solid $primary;
+  padding-left: 1rem;
   flex-grow: 1;
 
-  @media (max-width: 1199px) {
-    font-size: 1.1rem;
-    min-height: 85px;
-  }
-
   @media (max-width: 767px) {
-    font-size: 1.05rem;
+    font-size: 0.9rem;
     min-height: auto;
-    margin-bottom: 2rem;
+    margin-bottom: 1.25rem;
   }
 
   @media (max-width: 480px) {
-    font-size: 1rem;
-    padding-left: 1.2rem;
+    font-size: 0.875rem;
+    padding-left: 0.85rem;
   }
 }
 
-/* META INFORMATION */
+/* COMPACT META INFORMATION */
 .training-meta {
   list-style: none;
   padding: 0;
-  margin: 0 0 2.5rem 0;
+  margin: 0 0 1.5rem 0;
   border-top: 1px solid rgba(0, 0, 0, 0.08);
-  padding-top: 2rem;
+  padding-top: 1.25rem;
 
   li {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    margin-bottom: 1.25rem;
-    font-size: 1.05rem;
+    gap: 0.75rem;
+    margin-bottom: 0.85rem;
+    font-size: 0.9rem;
     color: #333333;
     transition: all 0.3s ease;
     font-weight: 500;
@@ -432,18 +221,18 @@ $light-text: #FFFFFF;
 
     &:hover {
       color: $secondary;
-      transform: translateX(8px);
+      transform: translateX(5px);
 
       i {
         color: $primary;
-        transform: scale(1.25);
+        transform: scale(1.2);
       }
     }
 
     i {
       color: $accent;
-      font-size: 1.2rem;
-      min-width: 24px;
+      font-size: 1rem;
+      min-width: 20px;
       transition: all 0.3s ease;
     }
 
@@ -454,39 +243,39 @@ $light-text: #FFFFFF;
       &.price {
         color: $primary;
         font-weight: 800;
-        font-size: 1.4rem;
+        font-size: 1.15rem;
         letter-spacing: -0.01em;
       }
     }
 
     @media (max-width: 767px) {
-      font-size: 1rem;
-      gap: 0.85rem;
+      font-size: 0.875rem;
+      gap: 0.65rem;
     }
 
     @media (max-width: 480px) {
-      font-size: 0.95rem;
+      font-size: 0.85rem;
     }
   }
 }
 
-/* PREMIUM CTA BUTTON */
+/* COMPACT CTA BUTTON */
 .btn-training {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 0.75rem;
   width: 100%;
   background: linear-gradient(135deg, $primary 0%, $accent 100%);
   color: $light-text;
-  padding: 1.4rem 2.5rem;
-  font-size: 1.15rem;
+  padding: 1rem 1.75rem;
+  font-size: 0.95rem;
   font-weight: 700;
   text-decoration: none;
-  border-radius: 12px;
+  border-radius: 10px;
   border: none;
   transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-  box-shadow: 0 12px 28px rgba(212, 175, 55, 0.35);
+  box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
   position: relative;
   overflow: hidden;
   margin-top: auto;
@@ -506,8 +295,8 @@ $light-text: #FFFFFF;
   }
 
   &:hover {
-    transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 18px 40px rgba(212, 175, 55, 0.5);
+    transform: translateY(-3px) scale(1.01);
+    box-shadow: 0 12px 30px rgba(212, 175, 55, 0.45);
     background: linear-gradient(135deg, $accent 0%, $primary 100%);
 
     &::before {
@@ -515,126 +304,148 @@ $light-text: #FFFFFF;
     }
 
     i {
-      transform: translateX(8px);
+      transform: translateX(5px);
     }
   }
 
   &:active {
-    transform: translateY(-2px) scale(0.98);
+    transform: translateY(-1px) scale(0.99);
   }
 
   i {
-    font-size: 1.15rem;
+    font-size: 0.95rem;
     transition: transform 0.3s ease;
   }
 
   @media (max-width: 767px) {
-    padding: 1.25rem 2rem;
-    font-size: 1.05rem;
+    padding: 0.95rem 1.5rem;
+    font-size: 0.9rem;
   }
 
   @media (max-width: 480px) {
-    padding: 1.15rem 1.75rem;
-    font-size: 1rem;
+    padding: 0.875rem 1.35rem;
+    font-size: 0.875rem;
   }
 }
 
-/* CARD ANIMATIONS */
-.training-card {
-  animation: cardFadeIn 0.7s ease forwards;
-  opacity: 0;
+/* COMPACT HEADER */
+.training-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  animation: fadeInDown 0.8s ease;
 
-  @for $i from 1 through 6 {
-    &[data-index="#{$i - 1}"] {
-      animation-delay: #{$i * 0.15}s;
+  @media (max-width: 768px) {
+    margin-bottom: 3rem;
+  }
+
+  h2 {
+    font-size: 3rem;
+    font-weight: 800;
+    color: $secondary;
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+    letter-spacing: -0.02em;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 5px;
+      background: linear-gradient(90deg, $primary, $accent);
+      border-radius: 3px;
     }
-  }
-}
 
-@keyframes cardFadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+    @media (max-width: 1023px) {
+      font-size: 2.5rem;
+    }
 
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* RTL SUPPORT */
-[dir="rtl"] {
-  .training-meta li:hover {
-    transform: translateX(-8px);
-  }
-
-  .training-description {
-    border-left: none;
-    border-right: 4px solid $primary;
-    padding-left: 0;
-    padding-right: 1.5rem;
+    @media (max-width: 767px) {
+      font-size: 2rem;
+    }
 
     @media (max-width: 480px) {
-      padding-right: 1.2rem;
+      font-size: 1.75rem;
     }
   }
 
-  .btn-training:hover i {
-    transform: translateX(-8px);
-  }
+  p {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #555555;
+    max-width: 700px;
+    margin: 2.5rem auto 0;
+    font-weight: 400;
 
-  .training-card::after {
-    left: auto;
-    right: 0;
-  }
-}
+    @media (max-width: 767px) {
+      font-size: 1.05rem;
+      margin-top: 2rem;
+    }
 
-/* ACCESSIBILITY */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-
-/* FOCUS STATES FOR ACCESSIBILITY */
-.btn-training:focus-visible {
-  outline: 3px solid $primary;
-  outline-offset: 4px;
-}
-
-.training-card:focus-within {
-  border-color: $primary;
-}
-
-/* PRINT STYLES */
-@media print {
-  .training-section {
-    background: white;
-
-    &::before,
-    &::after {
-      display: none;
+    @media (max-width: 480px) {
+      font-size: 1rem;
     }
   }
+}
 
-  .training-card {
-    break-inside: avoid;
-    box-shadow: none;
-    border: 1px solid #ccc;
+/* COMPACT NO TRAININGS */
+.no-trainings {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem 2rem;
+
+  .no-trainings-content {
+    background: $light-text;
+    padding: 3.5rem 3rem;
+    border-radius: 20px;
+    border: 2px dashed rgba(212, 175, 55, 0.3);
+    max-width: 550px;
+    margin: 0 auto;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+    transition: all 0.4s ease;
+
+    &:hover {
+      border-color: $primary;
+      box-shadow: 0 10px 30px rgba(212, 175, 55, 0.15);
+    }
+
+    i {
+      font-size: 3.5rem;
+      color: rgba(212, 175, 55, 0.5);
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+
+    h3 {
+      font-size: 1.65rem;
+      color: $secondary;
+      margin-bottom: 0.85rem;
+      font-weight: 700;
+    }
+
+    p {
+      font-size: 1.05rem;
+      color: #666666;
+      margin: 0;
+    }
+
+    @media (max-width: 767px) {
+      padding: 3rem 2rem;
+
+      i {
+        font-size: 3rem;
+      }
+
+      h3 {
+        font-size: 1.5rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
   }
 }
