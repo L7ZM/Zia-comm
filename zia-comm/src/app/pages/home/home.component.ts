@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
   standalone: true,
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
-  imports: [RouterModule, TranslateModule,CommonModule,NgOptimizedImage]
+  imports: [RouterModule, TranslateModule,CommonModule]
 })
 export class HomeComponent {
   currentLang: string;
