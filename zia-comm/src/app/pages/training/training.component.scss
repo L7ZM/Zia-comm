@@ -1,47 +1,77 @@
 // Color Palette
-$primary: #D4AF37;       // gold accent
+$primary: #D4AF37;
 $accent: #C0A938;
-$secondary: #000000;     // dark text/navy-black
-$light-bg: #F9F9F9;      // light background
-$dark-bg: #111111;       // dark cards / navbar
+$secondary: #000000;
+$light-bg: #F9F9F9;
+$dark-bg: #111111;
 $text-color: #1a1d29;
 $light-text: #FFFFFF;
 
+/* TRAINING SECTION */
+.training-section {
+  padding: 5rem 0;
+  background: $light-bg;
 
+  @media (max-width: 768px) {
+    padding: 3.5rem 0;
+  }
+}
 
+.training-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
 
+  @media (max-width: 768px) {
+    padding: 0 1.5rem;
+  }
+}
 
-/* TRAINING GRID - SMALLER CARDS */
+/* TRAINING GRID - OPTIMIZED FOR DESKTOP */
 .training-grid {
   display: grid;
   gap: 2rem;
   margin-bottom: 3rem;
 
+  // Desktop: 3 columns with max-width cards
   @media (min-width: 1200px) {
-    grid-template-columns: repeat(3, 1fr); // 3 columns for smaller cards
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
-  @media (min-width: 768px) and (max-width: 1199px) {
+  // Laptop: 3 columns slightly tighter
+  @media (min-width: 992px) and (max-width: 1199px) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem;
+  }
+
+  // Tablet: 2 columns
+  @media (min-width: 768px) and (max-width: 991px) {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.75rem;
   }
 
+  // Mobile: 1 column
   @media (max-width: 767px) {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
 
+  // Single card: centered, optimal width
   &.single-card {
     grid-template-columns: 1fr;
-    max-width: 600px;
+    max-width: 420px;
     margin-left: auto;
     margin-right: auto;
   }
 
+  // Two cards: centered, optimal width
   &.two-cards {
     @media (min-width: 768px) {
       grid-template-columns: repeat(2, 1fr);
-      max-width: 900px;
+      max-width: 880px;
       margin-left: auto;
       margin-right: auto;
     }
@@ -52,7 +82,7 @@ $light-text: #FFFFFF;
   }
 }
 
-/* COMPACT TRAINING CARDS */
+/* OPTIMIZED TRAINING CARDS */
 .training-card {
   background: $light-text;
   padding: 2rem;
@@ -65,6 +95,8 @@ $light-text: #FFFFFF;
   flex-direction: column;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
   cursor: pointer;
+  max-width: 100%;
+  min-height: 480px;
 
   // Gradient overlay on hover
   &::before {
@@ -118,8 +150,13 @@ $light-text: #FFFFFF;
     }
   }
 
+  @media (max-width: 991px) {
+    min-height: 460px;
+  }
+
   @media (max-width: 767px) {
     padding: 1.75rem;
+    min-height: auto;
   }
 
   @media (max-width: 480px) {
@@ -127,10 +164,10 @@ $light-text: #FFFFFF;
   }
 }
 
-/* COMPACT ICON WRAPPER */
+/* ICON WRAPPER */
 .icon-wrapper-training {
-  width: 65px;
-  height: 65px;
+  width: 60px;
+  height: 60px;
   background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(192, 169, 56, 0.05));
   border-radius: 14px;
   display: flex;
@@ -138,52 +175,63 @@ $light-text: #FFFFFF;
   justify-content: center;
   margin-bottom: 1.25rem;
   transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-  position: relative;
+  flex-shrink: 0;
 
   i {
-    font-size: 1.9rem;
+    font-size: 1.75rem;
     color: $primary;
     transition: all 0.4s ease;
   }
 
   @media (max-width: 767px) {
-    width: 60px;
-    height: 60px;
+    width: 55px;
+    height: 55px;
 
     i {
-      font-size: 1.75rem;
+      font-size: 1.6rem;
     }
   }
 }
 
-/* COMPACT CARD TITLE */
+/* CARD TITLE */
 .training-card h3 {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 700;
   color: $secondary;
   margin-bottom: 1rem;
   line-height: 1.3;
   letter-spacing: -0.01em;
+  min-height: 56px;
 
-  @media (max-width: 767px) {
+  @media (max-width: 991px) {
     font-size: 1.35rem;
   }
 
+  @media (max-width: 767px) {
+    font-size: 1.3rem;
+    min-height: auto;
+  }
+
   @media (max-width: 480px) {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
   }
 }
 
-/* COMPACT DESCRIPTION */
+/* DESCRIPTION */
 .training-description {
   font-size: 0.95rem;
   line-height: 1.6;
   color: #555555;
   margin-bottom: 1.5rem;
-  min-height: 70px;
   border-left: 3px solid $primary;
   padding-left: 1rem;
-  flex-grow: 1;
+  flex-grow: 0;
+  min-height: 75px;
+
+  @media (max-width: 991px) {
+    font-size: 0.9rem;
+    min-height: 70px;
+  }
 
   @media (max-width: 767px) {
     font-size: 0.9rem;
@@ -197,19 +245,20 @@ $light-text: #FFFFFF;
   }
 }
 
-/* COMPACT META INFORMATION */
+/* META INFORMATION */
 .training-meta {
   list-style: none;
   padding: 0;
   margin: 0 0 1.5rem 0;
   border-top: 1px solid rgba(0, 0, 0, 0.08);
   padding-top: 1.25rem;
+  flex-grow: 1;
 
   li {
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    margin-bottom: 0.85rem;
+    margin-bottom: 0.8rem;
     font-size: 0.9rem;
     color: #333333;
     transition: all 0.3s ease;
@@ -231,8 +280,8 @@ $light-text: #FFFFFF;
 
     i {
       color: $accent;
-      font-size: 1rem;
-      min-width: 20px;
+      font-size: 0.95rem;
+      min-width: 18px;
       transition: all 0.3s ease;
     }
 
@@ -243,7 +292,7 @@ $light-text: #FFFFFF;
       &.price {
         color: $primary;
         font-weight: 800;
-        font-size: 1.15rem;
+        font-size: 1.1rem;
         letter-spacing: -0.01em;
       }
     }
@@ -251,6 +300,7 @@ $light-text: #FFFFFF;
     @media (max-width: 767px) {
       font-size: 0.875rem;
       gap: 0.65rem;
+      margin-bottom: 0.75rem;
     }
 
     @media (max-width: 480px) {
@@ -259,7 +309,7 @@ $light-text: #FFFFFF;
   }
 }
 
-/* COMPACT CTA BUTTON */
+/* CTA BUTTON */
 .btn-training {
   display: flex;
   align-items: center;
@@ -268,8 +318,8 @@ $light-text: #FFFFFF;
   width: 100%;
   background: linear-gradient(135deg, $primary 0%, $accent 100%);
   color: $light-text;
-  padding: 1rem 1.75rem;
-  font-size: 0.95rem;
+  padding: 0.95rem 1.75rem;
+  font-size: 0.9rem;
   font-weight: 700;
   text-decoration: none;
   border-radius: 10px;
@@ -281,6 +331,7 @@ $light-text: #FFFFFF;
   margin-top: auto;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  flex-shrink: 0;
 
   // Shine effect
   &::before {
@@ -313,22 +364,22 @@ $light-text: #FFFFFF;
   }
 
   i {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     transition: transform 0.3s ease;
   }
 
   @media (max-width: 767px) {
-    padding: 0.95rem 1.5rem;
-    font-size: 0.9rem;
+    padding: 0.9rem 1.5rem;
+    font-size: 0.875rem;
   }
 
   @media (max-width: 480px) {
-    padding: 0.875rem 1.35rem;
-    font-size: 0.875rem;
+    padding: 0.85rem 1.35rem;
+    font-size: 0.85rem;
   }
 }
 
-/* COMPACT HEADER */
+/* HEADER */
 .training-header {
   text-align: center;
   margin-bottom: 4rem;
@@ -339,7 +390,7 @@ $light-text: #FFFFFF;
   }
 
   h2 {
-    font-size: 3rem;
+    font-size: 2.75rem;
     font-weight: 800;
     color: $secondary;
     margin-bottom: 1rem;
@@ -373,7 +424,7 @@ $light-text: #FFFFFF;
   }
 
   p {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     line-height: 1.6;
     color: #555555;
     max-width: 700px;
@@ -391,7 +442,7 @@ $light-text: #FFFFFF;
   }
 }
 
-/* COMPACT NO TRAININGS */
+/* NO TRAININGS */
 .no-trainings {
   grid-column: 1 / -1;
   text-align: center;
@@ -447,5 +498,35 @@ $light-text: #FFFFFF;
         font-size: 1rem;
       }
     }
+  }
+}
+
+/* RTL Support */
+[dir="rtl"] {
+  .training-description {
+    border-left: none;
+    border-right: 3px solid $primary;
+    padding-left: 0;
+    padding-right: 1rem;
+  }
+
+  .training-meta li:hover {
+    transform: translateX(-5px);
+  }
+
+  .btn-training:hover i {
+    transform: translateX(-5px);
+  }
+}
+
+/* Animation */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
