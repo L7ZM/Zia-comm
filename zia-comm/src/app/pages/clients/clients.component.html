@@ -4,20 +4,16 @@
     <p>{{ 'CLIENTS.SUBTITLE' | translate }}</p>
   </div>
 
-  <div class="clients-grid">
-    <ng-container *ngIf="clientsText$ | async as texts">
-      <div
-        class="client-card"
-        *ngFor="let client of clients; let i = index"
-      >
-        <img
-          [src]="client.logo"
-          [alt]="texts[i].NAME"
-          class="client-logo"
-        />
-        <h3>{{ texts[i].NAME }}</h3>
-        <p>{{ texts[i].DESCRIPTION }}</p>
+<div class="clients-grid" style="min-height: 400px;">
+  <ng-container *ngIf="clientsText$ | async as texts">
+    <div class="client-card" *ngFor="let client of clients; let i = index">
+      <div class="client-logo-wrapper">
+        <img src="{{ client.logo }}" alt="{{ texts[i].NAME }}" width="200" height="100">
       </div>
-    </ng-container>
-  </div>
+      <h3>{{ texts[i].NAME }}</h3>
+      <p>{{ texts[i].DESCRIPTION }}</p>
+    </div>
+  </ng-container>
+</div>
+
 </section>

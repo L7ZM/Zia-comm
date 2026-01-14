@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
   standalone: true,
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
-  imports: [RouterModule, TranslateModule,CommonModule]
+  imports: [RouterModule, TranslateModule,CommonModule,NgOptimizedImage]
 })
 export class HomeComponent {
   currentLang: string;

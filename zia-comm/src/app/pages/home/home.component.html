@@ -1,78 +1,91 @@
+<link rel="preload" as="image" href="assets/Pictures/pic.webp">
+
 <section class="home-hero" [dir]="currentLang === 'ar' ? 'rtl' : 'ltr'">
   <div class="hero-container">
-
     <div class="hero-content">
       <h1>
-        {{ 'HOME.HERO.TITLE' | translate }}
-        <span>{{ 'HOME.HERO.SUBTITLE' | translate }}</span>
+        {{ "HOME.HERO.TITLE" | translate }}
+        <span>{{ "HOME.HERO.SUBTITLE" | translate }}</span>
       </h1>
 
-      <p>{{ 'HOME.HERO.TEXT' | translate }}</p>
+      <p>{{ "HOME.HERO.TEXT" | translate }}</p>
 
       <div class="hero-actions">
         <a routerLink="/services" class="btn btn-primary">
-          {{ 'HOME.HERO.BTN_SERVICES' | translate }}
+          {{ "HOME.HERO.BTN_SERVICES" | translate }}
         </a>
         <a routerLink="/training" class="btn btn-outline">
-          {{ 'HOME.HERO.BTN_TRAINING' | translate }}
+          {{ "HOME.HERO.BTN_TRAINING" | translate }}
         </a>
       </div>
     </div>
 
     <div class="hero-visual">
-      <img src="assets/Pictures/pic.webp" alt="Fouzia Azmi – Conférences & Formations" />
+      <div class="hero-image-wrapper">
+        <picture>
+         <img src="assets/Pictures/pic.webp" loading="eager" width="500" height="300" alt="...">
+        </picture>
+      </div>
     </div>
-
   </div>
 </section>
 
 <section class="home-what-we-do" [dir]="currentLang === 'ar' ? 'rtl' : 'ltr'">
   <div class="wwd-container">
-    <h2>{{ 'HOME.WWD.TITLE' | translate }}</h2>
+    <h2>{{ "HOME.WWD.TITLE" | translate }}</h2>
     <p [innerHTML]="'HOME.WWD.TEXT' | translate"></p>
 
     <div class="wwd-grid">
       <div class="wwd-card">
         <i class="fas fa-lightbulb"></i>
-        <h3>{{ 'HOME.WWD.CARDS.STRATEGY.TITLE' | translate }}</h3>
-        <p>{{ 'HOME.WWD.CARDS.STRATEGY.TEXT' | translate }}</p>
+        <h3>{{ "HOME.WWD.CARDS.STRATEGY.TITLE" | translate }}</h3>
+        <p>{{ "HOME.WWD.CARDS.STRATEGY.TEXT" | translate }}</p>
       </div>
 
       <div class="wwd-card">
         <i class="fas fa-rocket"></i>
-        <h3>{{ 'HOME.WWD.CARDS.MARKETING.TITLE' | translate }}</h3>
-        <p>{{ 'HOME.WWD.CARDS.MARKETING.TEXT' | translate }}</p>
+        <h3>{{ "HOME.WWD.CARDS.MARKETING.TITLE" | translate }}</h3>
+        <p>{{ "HOME.WWD.CARDS.MARKETING.TEXT" | translate }}</p>
       </div>
 
       <div class="wwd-card">
         <i class="fas fa-brain"></i>
-        <h3>{{ 'HOME.WWD.CARDS.AI.TITLE' | translate }}</h3>
-        <p>{{ 'HOME.WWD.CARDS.AI.TEXT' | translate }}</p>
+        <h3>{{ "HOME.WWD.CARDS.AI.TITLE" | translate }}</h3>
+        <p>{{ "HOME.WWD.CARDS.AI.TEXT" | translate }}</p>
       </div>
     </div>
   </div>
 </section>
 
 <section class="home-why-us" [dir]="currentLang === 'ar' ? 'rtl' : 'ltr'">
-  <h2>{{ 'HOME.WHY.TITLE' | translate }}</h2>
+  <h2>{{ "HOME.WHY.TITLE" | translate }}</h2>
   <div class="why-container">
-    <div class="why-item"><i class="fas fa-award"></i><p>{{ 'HOME.WHY.ITEM1' | translate }}</p></div>
-    <div class="why-item"><i class="fas fa-lightbulb"></i><p>{{ 'HOME.WHY.ITEM2' | translate }}</p></div>
-    <div class="why-item"><i class="fas fa-robot"></i><p>{{ 'HOME.WHY.ITEM3' | translate }}</p></div>
+    <div class="why-item">
+      <i class="fas fa-award"></i>
+      <p>{{ "HOME.WHY.ITEM1" | translate }}</p>
+    </div>
+    <div class="why-item">
+      <i class="fas fa-lightbulb"></i>
+      <p>{{ "HOME.WHY.ITEM2" | translate }}</p>
+    </div>
+    <div class="why-item">
+      <i class="fas fa-robot"></i>
+      <p>{{ "HOME.WHY.ITEM3" | translate }}</p>
+    </div>
   </div>
 </section>
 
 <section class="home-testimonials" [dir]="currentLang === 'ar' ? 'rtl' : 'ltr'">
   <div class="test-container">
-    <h2>{{ 'HOME.TESTIMONIALS.TITLE' | translate }}</h2>
+    <h2>{{ "HOME.TESTIMONIALS.TITLE" | translate }}</h2>
 
     <div class="test-cards">
       <div class="test-card">
-        <blockquote>{{ 'HOME.TESTIMONIALS.QUOTE1' | translate }}</blockquote>
+        <blockquote>{{ "HOME.TESTIMONIALS.QUOTE1" | translate }}</blockquote>
         <span>Fouzia AZMI — ZIA COMM</span>
       </div>
       <div class="test-card">
-        <blockquote>{{ 'HOME.TESTIMONIALS.QUOTE2' | translate }}</blockquote>
+        <blockquote>{{ "HOME.TESTIMONIALS.QUOTE2" | translate }}</blockquote>
         <span>Fouzia AZMI — Consultante & Formatrice</span>
       </div>
     </div>
