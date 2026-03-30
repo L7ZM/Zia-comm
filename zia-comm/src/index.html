@@ -14,9 +14,17 @@
     <base href="/" />
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
 
+    <!-- PERFORMANCE -->
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
 
+    <!-- IMPORTANT: USE SINGLE FILE (FIXES ICON ISSUE) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <!-- PRELOAD HERO IMAGE -->
     <link
       rel="preload"
       as="image"
@@ -24,44 +32,20 @@
       fetchpriority="high"
     />
 
-    <link
-      rel="preload"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/solid.min.css"
-      as="style"
-      onload="
-        this.onload = null;
-        this.rel = 'stylesheet';
-      "
-    />
-    <link
-      rel="preload"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/brands.min.css"
-      as="style"
-      onload="
-        this.onload = null;
-        this.rel = 'stylesheet';
-      "
-    />
-    <noscript>
-      <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/solid.min.css"
-      />
-      <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/brands.min.css"
-      />
-    </noscript>
+    <!-- ✅ FIXED CSP -->
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self';
-               script-src 'self' 'unsafe-inline';
-               style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com;
-               img-src 'self' data: blob: https://*.googleusercontent.com;
-               font-src 'self' https://cdnjs.cloudflare.com;
-               connect-src 'self' https://docs.google.com https://*.googleusercontent.com;"
+      content="
+        default-src 'self';
+        script-src 'self' 'unsafe-inline';
+        style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com;
+        img-src 'self' data: blob: https://*.googleusercontent.com;
+        font-src 'self' https://cdnjs.cloudflare.com data:;
+        connect-src 'self' https://docs.google.com https://*.googleusercontent.com;
+      "
     />
 
+    <!-- LANGUAGES -->
     <link rel="alternate" hreflang="fr" href="https://yourdomain.com/fr/" />
     <link rel="alternate" hreflang="ar" href="https://yourdomain.com/ar/" />
     <link rel="alternate" hreflang="en" href="https://yourdomain.com/en/" />
