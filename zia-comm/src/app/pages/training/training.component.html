@@ -7,15 +7,21 @@
       <p>{{ 'TRAINING.SUBTITLE' | translate }}</p>
     </div>
 
+    <!-- LOADER -->
+    <div class="training-loader" *ngIf="loading">
+      <div class="loader-spinner"></div>
+    </div>
+
     <!-- TRAINING CARDS -->
     <div
+      *ngIf="!loading"
       class="training-grid"
       [class.single-card]="trainings.length === 1"
       [class.two-cards]="trainings.length === 2"
     >
 
       <!-- No trainings message -->
-      <div *ngIf="trainings.length === 0" class="no-trainings">
+      <div  *ngIf="trainings.length === 0" class="no-trainings">
         <div class="no-trainings-content">
           <i class="fas fa-calendar-times"></i>
           <h3>{{ 'TRAINING.NO_TRAININGS' | translate }}</h3>
