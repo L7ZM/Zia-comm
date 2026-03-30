@@ -4,16 +4,48 @@
     <p>{{ 'CLIENTS.SUBTITLE' | translate }}</p>
   </div>
 
-<div class="clients-grid" style="min-height: 400px;">
-  <ng-container *ngIf="clientsText$ | async as texts">
-    <div class="client-card" *ngFor="let client of clients; let i = index">
-      <div class="client-logo-wrapper">
-        <img src="{{ client.logo }}" alt="{{ texts[i].NAME }}" width="200" height="100">
-      </div>
-      <h3>{{ texts[i].NAME }}</h3>
-      <p>{{ texts[i].DESCRIPTION }}</p>
-    </div>
-  </ng-container>
-</div>
+  <div class="clients-carousel-wrapper">
+    <ng-container *ngIf="clientsText$ | async as texts">
+      <div class="clients-track">
 
+        <!-- ✅ Primary set: indexed by SEO & screen readers -->
+        <article
+          class="client-card"
+          *ngFor="let client of clients; let i = index"
+        >
+          <div class="client-logo-wrapper">
+            <img
+              [src]="client.logo"
+              [alt]="texts[i].NAME"
+              width="100"
+              height="100"
+              loading="lazy"
+            />
+          </div>
+          <h3>{{ texts[i].NAME }}</h3>
+          <p>{{ texts[i].DESCRIPTION }}</p>
+        </article>
+
+        <!-- 🔁 Clone set: pure visual loop, hidden from SEO & assistive tech -->
+        <article
+          class="client-card"
+          *ngFor="let client of clients; let i = index"
+          aria-hidden="true"
+        >
+          <div class="client-logo-wrapper">
+            <img
+              [src]="client.logo"
+              alt=""
+              width="100"
+              height="100"
+              loading="lazy"
+            />
+          </div>
+          <h3>{{ texts[i].NAME }}</h3>
+          <p>{{ texts[i].DESCRIPTION }}</p>
+        </article>
+
+      </div>
+    </ng-container>
+  </div>
 </section>

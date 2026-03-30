@@ -1,32 +1,23 @@
-/* ============================================
-   CLIENTS SECTION - COMPACT VERSION
-   ============================================ */
-
-// Color Palette
-$primary: #D4AF37;       // gold accent
-$accent: #C0A938;
-$secondary: #000000;     // dark text/navy-black
-$light-bg: #F9F9F9;      // light background
-$dark-bg: #111111;       // dark cards / navbar
-$text-color: #1a1d29;
+// ── Variables ──────────────────────────────────────────────
+$primary:    #D4AF37;
+$accent:     #C0A938;
+$secondary:  #000000;
+$light-bg:   #F9F9F9;
 $light-text: #FFFFFF;
 
-/* CLIENTS SECTION */
+// ── Section ────────────────────────────────────────────────
 .clients-section {
   background: linear-gradient(180deg, $light-bg 0%, #FFFFFF 50%, $light-bg 100%);
-  padding: 5rem 1.5rem;
+  padding: 5rem 0;        // No horizontal padding — carousel bleeds edge-to-edge
   position: relative;
   overflow: hidden;
 
-  // Subtle gradient overlays
   &::before {
     content: '';
     position: absolute;
-    top: 0;
-    right: 0;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(212, 175, 55, 0.04), transparent 70%);
+    top: 0; right: 0;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(212,175,55,.04), transparent 70%);
     border-radius: 50%;
     filter: blur(80px);
     pointer-events: none;
@@ -35,32 +26,26 @@ $light-text: #FFFFFF;
   &::after {
     content: '';
     position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, rgba(17, 17, 17, 0.03), transparent 70%);
+    bottom: 0; left: 0;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(17,17,17,.03), transparent 70%);
     border-radius: 50%;
     filter: blur(80px);
     pointer-events: none;
   }
 
-  @media (max-width: 768px) {
-    padding: 4rem 1.25rem;
-  }
-
-  @media (max-width: 480px) {
-    padding: 3rem 1rem;
-  }
+  @media (max-width: 768px) { padding: 4rem 0; }
+  @media (max-width: 480px) { padding: 3rem 0; }
 }
 
-/* HEADER SECTION */
+// ── Header ─────────────────────────────────────────────────
 .clients-header {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 3.5rem;
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;
+  padding: 0 1.5rem;
 
   h2 {
     font-size: 2.5rem;
@@ -77,332 +62,255 @@ $light-text: #FFFFFF;
       bottom: -15px;
       left: 50%;
       transform: translateX(-50%);
-      width: 100px;
-      height: 4px;
+      width: 100px; height: 4px;
       background: linear-gradient(90deg, $primary, $accent);
       border-radius: 2px;
     }
 
-    @media (max-width: 1023px) {
-      font-size: 2.2rem;
-    }
-
-    @media (max-width: 767px) {
-      font-size: 1.9rem;
-    }
-
-    @media (max-width: 480px) {
-      font-size: 1.6rem;
-    }
+    @media (max-width: 1023px) { font-size: 2.2rem; }
+    @media (max-width: 767px)  { font-size: 1.9rem; }
+    @media (max-width: 480px)  { font-size: 1.6rem; }
   }
 
   p {
     font-size: 1.1rem;
     line-height: 1.6;
-    color: #555555;
+    color: #555;
     max-width: 700px;
     margin: 2rem auto 0;
 
-    @media (max-width: 767px) {
-      font-size: 1rem;
-      margin-top: 1.75rem;
-    }
-
-    @media (max-width: 480px) {
-      font-size: 0.95rem;
-    }
+    @media (max-width: 767px) { font-size: 1rem;    margin-top: 1.75rem; }
+    @media (max-width: 480px) { font-size: 0.95rem; }
   }
 }
 
-/* CLIENTS GRID */
-.clients-grid {
-  display: grid;
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
+// ── Carousel Wrapper ───────────────────────────────────────
+.clients-carousel-wrapper {
+  position: relative;
+  overflow: hidden;
 
-  @media (min-width: 1200px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  @media (min-width: 768px) and (max-width: 1199px) {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.75rem;
-  }
+  // Soft fade at both edges — purely decorative, doesn't affect DOM
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
 
   @media (max-width: 767px) {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  &.single-card {
-    grid-template-columns: 1fr;
-    max-width: 600px;
-  }
-
-  &.two-cards {
-    @media (min-width: 768px) {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    @media (max-width: 767px) {
-      grid-template-columns: 1fr;
-    }
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 4%,
+      black 96%,
+      transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 4%,
+      black 96%,
+      transparent 100%
+    );
   }
 }
 
-/* COMPACT CLIENT CARDS */
+// ── Scrolling Track ────────────────────────────────────────
+.clients-track {
+  display: flex;
+  gap: 1.75rem;
+  width: max-content;
+  padding: 1.25rem 0 1.75rem;   // Vertical room for hover shadows
+
+  // GPU-accelerated smooth scroll
+  animation: carousel-ltr 35s linear infinite;
+  will-change: transform;
+
+  &:hover {
+    animation-play-state: paused;  // Pause on hover = user-friendly
+  }
+
+  @media (max-width: 767px) { gap: 1.25rem; animation-duration: 25s; }
+  @media (max-width: 480px) { gap: 1rem;    animation-duration: 20s; }
+}
+
+// RTL: reverse direction
+[dir="rtl"] .clients-track {
+  animation-name: carousel-rtl;
+}
+
+@keyframes carousel-ltr {
+  from { transform: translateX(0);     }
+  to   { transform: translateX(-50%);  }  // -50% = shift by exactly one full set
+}
+
+@keyframes carousel-rtl {
+  from { transform: translateX(0);    }
+  to   { transform: translateX(50%);  }
+}
+
+// ── Client Card ────────────────────────────────────────────
 .client-card {
   background: $light-text;
   padding: 2rem;
   border-radius: 16px;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border: 1px solid rgba(0,0,0,.08);
+  box-shadow: 0 8px 25px rgba(0,0,0,.06);
   position: relative;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+  cursor: default;
 
-  // Gold accent line
+  // Fixed width is REQUIRED for correct translateX(-50%) math
+  width: 300px;
+  flex-shrink: 0;
+
+  transition:
+    transform      0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow     0.4s ease,
+    border-color   0.4s ease;
+
+  // Gold top accent line
   &::after {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 4px;
+    top: 0; left: 0;
+    width: 0; height: 4px;
     background: linear-gradient(90deg, $primary, $accent);
     transition: width 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
 
   &:hover {
     transform: translateY(-8px);
-    border-color: rgba(212, 175, 55, 0.25);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1),
-                0 0 0 1px rgba(212, 175, 55, 0.1);
+    border-color: rgba(212,175,55,.25);
+    box-shadow:
+      0 15px 35px rgba(0,0,0,.1),
+      0 0 0 1px rgba(212,175,55,.1);
 
-    &::after {
-      width: 100%;
-    }
+    &::after { width: 100%; }
 
-    .client-logo {
+    .client-logo-wrapper img {
       transform: scale(1.05);
-      filter: drop-shadow(0 5px 15px rgba(212, 175, 55, 0.2));
+      filter: drop-shadow(0 5px 15px rgba(212,175,55,.2));
     }
   }
 
-  @media (max-width: 1199px) {
-    padding: 1.75rem;
-  }
-
-  @media (max-width: 767px) {
-    padding: 1.5rem;
-  }
-
-  @media (max-width: 480px) {
-    padding: 1.25rem;
-  }
+  @media (max-width: 1199px) { width: 270px; padding: 1.75rem; }
+  @media (max-width: 767px)  { width: 230px; padding: 1.5rem;  }
+  @media (max-width: 480px)  { width: 200px; padding: 1.25rem; }
 }
 
-/* CLIENT LOGO */
-.client-logo {
-  width: 100px;
-  height: 100px;
+// RTL accent line
+[dir="rtl"] .client-card::after { left: auto; right: 0; }
+
+// ── Logo ───────────────────────────────────────────────────
+.client-logo-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-bottom: 1.25rem;
-  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-  object-fit: contain;
 
-  @media (max-width: 767px) {
-    width: 80px;
-    height: 80px;
-    margin-bottom: 1rem;
-  }
+  img {
+    width: 100px; height: 100px;
+    object-fit: contain;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 
-  @media (max-width: 480px) {
-    width: 70px;
-    height: 70px;
+    @media (max-width: 767px) { width: 80px;  height: 80px;  }
+    @media (max-width: 480px) { width: 65px;  height: 65px;  }
   }
 }
 
-/* CARD TITLE */
+// ── Card Text ──────────────────────────────────────────────
 .client-card h3 {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: 700;
   color: $secondary;
   margin-bottom: 0.75rem;
   line-height: 1.3;
 
-  @media (max-width: 1199px) {
-    font-size: 1.3rem;
-  }
-
-  @media (max-width: 767px) {
-    font-size: 1.25rem;
-  }
-
-  @media (max-width: 480px) {
-    font-size: 1.15rem;
-  }
+  @media (max-width: 767px) { font-size: 1.05rem; }
+  @media (max-width: 480px) { font-size: 0.95rem; }
 }
 
-/* DESCRIPTION */
 .client-card p {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   line-height: 1.6;
-  color: #555555;
+  color: #555;
   margin: 0;
   flex-grow: 1;
 
-  @media (max-width: 767px) {
-    font-size: 0.9rem;
-  }
-
-  @media (max-width: 480px) {
-    font-size: 0.85rem;
-    line-height: 1.5;
-  }
+  @media (max-width: 767px) { font-size: 0.85rem; }
+  @media (max-width: 480px) { font-size: 0.8rem; line-height: 1.5; }
 }
 
-/* NO CLIENTS STATE */
-.no-clients {
-  grid-column: 1 / -1;
-  text-align: center;
-  padding: 3rem 1.5rem;
-
-  .no-clients-content {
-    background: $light-text;
-    padding: 3rem 2.5rem;
-    border-radius: 20px;
-    border: 2px dashed rgba(212, 175, 55, 0.3);
-    max-width: 600px;
-    margin: 0 auto;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
-    transition: all 0.3s ease;
-
-    &:hover {
-      border-color: rgba(212, 175, 55, 0.4);
-      box-shadow: 0 10px 30px rgba(212, 175, 55, 0.1);
-    }
-
-    i {
-      font-size: 3rem;
-      color: rgba(212, 175, 55, 0.5);
-      margin-bottom: 1.25rem;
-      display: block;
-    }
-
-    h3 {
-      font-size: 1.5rem;
-      color: $secondary;
-      margin-bottom: 0.75rem;
-      font-weight: 700;
-    }
-
-    p {
-      font-size: 1rem;
-      color: #666666;
-      margin: 0;
-    }
-
-    @media (max-width: 767px) {
-      padding: 2.5rem 2rem;
-
-      i {
-        font-size: 2.5rem;
-      }
-
-      h3 {
-        font-size: 1.3rem;
-      }
-
-      p {
-        font-size: 0.9rem;
-      }
-    }
-  }
-}
-
-/* CARD ANIMATIONS */
-.client-card {
-  animation: cardFadeIn 0.6s ease forwards;
-  opacity: 0;
-
-  @for $i from 1 through 6 {
-    &:nth-child(#{$i}) {
-      animation-delay: #{$i * 0.1}s;
-    }
-  }
-}
-
-@keyframes cardFadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* RTL SUPPORT */
-[dir="rtl"] {
-  .client-card::after {
-    left: auto;
-    right: 0;
-  }
-}
-
-/* ACCESSIBILITY */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-
-  .client-card {
-    transform: none !important;
-
-    &:hover {
-      transform: none !important;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-    }
-  }
-}
-
-/* FOCUS STATES FOR ACCESSIBILITY */
+// ── Focus (Accessibility) ──────────────────────────────────
 .client-card:focus-within {
   border-color: $primary;
-  outline: 2px solid rgba(212, 175, 55, 0.3);
+  outline: 2px solid rgba(212,175,55,.3);
   outline-offset: 4px;
 }
 
-/* PRINT STYLES */
-@media print {
-  .clients-section {
-    background: white;
+// ── Reduced Motion ─────────────────────────────────────────
+// Converts to manual scroll for users who disable animations
+@media (prefers-reduced-motion: reduce) {
+  .clients-track {
+    animation: none;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
 
-    &::before,
-    &::after {
-      display: none;
+    .client-card {
+      scroll-snap-align: start;
     }
   }
 
+  .clients-carousel-wrapper {
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+
+  .client-card:hover {
+    transform: none;
+    box-shadow: 0 8px 20px rgba(0,0,0,.08);
+  }
+}
+
+// ── Print ──────────────────────────────────────────────────
+@media print {
+  .clients-carousel-wrapper {
+    overflow: visible;
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+
+  .clients-track {
+    animation: none;
+    flex-wrap: wrap;
+    width: auto;
+  }
+
   .client-card {
+    width: auto;
     break-inside: avoid;
     box-shadow: none;
     border: 1px solid #ccc;
+    margin-bottom: 1rem;
 
-    &:hover {
-      transform: none;
-      box-shadow: none;
-    }
+    &:hover { transform: none; box-shadow: none; }
+
+    // Hide clones in print
+    &[aria-hidden="true"] { display: none; }
   }
 }
