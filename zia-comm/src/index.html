@@ -1,22 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="fr">
   <head>
     <meta charset="utf-8" />
-    <title>ZiaComm</title>
-    <base href="/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>ZiaComm – Intelligence Commerciale & Marketing Digital</title>
+
     <meta
       name="description"
-      content="Zia Comm vous accompagne dans l’intelligence commerciale automatisée, les stratégies marketing, la digitalisation des processus, les solutions SaaS et la formation en intelligence artificielle pour booster votre performance et croissance."
+      content="Zia Comm vous accompagne dans l'intelligence commerciale automatisée, les stratégies marketing, la digitalisation des processus, les solutions SaaS et la formation en intelligence artificielle pour booster votre performance et croissance."
     />
 
-    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico" />
+    <!-- Base & Favicon -->
+    <base href="/" />
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
 
-    <!-- Font Awesome Icons -->
+    <!-- Preconnect to CDN before any requests -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+
+    <!-- Preload above-the-fold images -->
+    <link
+      rel="preload"
+      as="image"
+      href="assets/Pictures/pic.webp"
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="assets/Pictures/Hero.webp"
+      fetchpriority="high"
+    />
+
+    <!-- Font Awesome — solid only (fas icons) -->
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/solid.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/fontawesome.min.css"
+    />
+
+    <!-- CSP -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self';
+               script-src 'self' 'unsafe-inline';
+               style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com;
+               img-src 'self' data: blob:;
+               font-src 'self' https://cdnjs.cloudflare.com;
+               connect-src 'self';"
+    />
+
+    <!-- Multilang hints (fr/ar/en) -->
+    <link rel="alternate" hreflang="fr" href="https://yourdomain.com/fr/" />
+    <link rel="alternate" hreflang="ar" href="https://yourdomain.com/ar/" />
+    <link rel="alternate" hreflang="en" href="https://yourdomain.com/en/" />
+    <link rel="alternate" hreflang="x-default" href="https://yourdomain.com/" />
+
   </head>
 
   <body>

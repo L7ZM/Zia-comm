@@ -1,5 +1,3 @@
-<link rel="preload" as="image" href="assets/Pictures/pic.webp">
-
 <section class="home-hero" [dir]="currentLang === 'ar' ? 'rtl' : 'ltr'">
   <div class="hero-container">
     <div class="hero-content">
@@ -23,7 +21,14 @@
     <div class="hero-visual">
       <div class="hero-image-wrapper">
         <picture>
-         <img src="assets/Pictures/pic.webp" loading="eager" width="500" height="300" alt="...">
+          <img
+            src="assets/Pictures/pic.webp"
+            loading="eager"
+            fetchpriority="high"
+            width="500"
+            height="300"
+            alt="..."
+          />
         </picture>
       </div>
     </div>

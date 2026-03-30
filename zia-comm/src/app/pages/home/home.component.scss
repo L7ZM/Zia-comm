@@ -16,6 +16,12 @@ $light-text: #ffffff;     // white text for dark backgrounds
   box-sizing: border-box;
 }
 
+/* ADD THIS: */
+.hero-image-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 body {
   font-family: 'Inter', sans-serif;
   background: $light-bg;

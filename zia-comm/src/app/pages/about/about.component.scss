@@ -16,6 +16,12 @@ $light-text: #FFFFFF;
   0%, 100% { transform: translate(0, 0); }
   50% { transform: translate(35px, -35px); }
 }
+/* ADD THIS: */
+.about-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 
 /* ==========================================
    HERO SECTION

@@ -5,6 +5,13 @@ $secondary:  #000000;
 $light-bg:   #F9F9F9;
 $light-text: #FFFFFF;
 
+/* ADD THIS: */
+.client-logo-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 // ── Section ────────────────────────────────────────────────
 .clients-section {
   background: linear-gradient(180deg, $light-bg 0%, #FFFFFF 50%, $light-bg 100%);

@@ -27,8 +27,9 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-               "src/favicon.ico",
+              "src/favicon.ico",
               "src/assets",
+              "src/robots.txt",
               {
                 "glob": "**/*",
                 "input": "public"
@@ -53,7 +54,15 @@
                   "maximumError": "12kB"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "optimization": {
+                "scripts": true,
+                "styles": {
+                  "minify": true,
+                  "inlineCritical": true
+                },
+                "fonts": true
+              }
             },
             "development": {
               "optimization": false,
