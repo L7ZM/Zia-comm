@@ -1,31 +1,17 @@
-/* ==========================================
-   VARIABLES
-========================================== */
-$primary: #D4AF37;       // gold accent
+$primary: #D4AF37;
 $accent: #C0A938;
-$secondary: #000000;     // dark text/navy-black
-$light-bg: #F9F9F9;      // light background
-$dark-bg: #111111;       // dark cards / navbar
+$secondary: #000000;
+$light-bg: #F9F9F9;
+$dark-bg: #111111;
 $text-color: #1a1d29;
 $light-text: #FFFFFF;
 
-/* ==========================================
-   GLOBAL ANIMATIONS
-========================================== */
-@keyframes float-slow {
-  0%, 100% { transform: translate(0, 0); }
-  50% { transform: translate(35px, -35px); }
-}
-/* ADD THIS: */
 .about-image img {
   width: 100%;
   height: auto;
   display: block;
 }
 
-/* ==========================================
-   HERO SECTION
-========================================== */
 .about-hero {
   background: linear-gradient(135deg, #faf8f3 0%, #f5f1e8 50%, #faf8f3 100%);
   padding: 6rem 1.5rem;
@@ -42,7 +28,6 @@ $light-text: #FFFFFF;
     background: radial-gradient(circle, rgba($primary, 0.08), transparent 70%);
     border-radius: 50%;
     filter: blur(120px);
-    animation: float-slow 22s ease-in-out infinite;
     z-index: 0;
   }
 }
@@ -89,20 +74,18 @@ $light-text: #FFFFFF;
   width: 380px;
   border-radius: 20px;
   box-shadow: 0 20px 40px rgba($secondary, 0.25);
-  transform: perspective(900px) rotateY(-8deg);
   transition: transform 0.6s ease, box-shadow 0.6s ease;
 
   &:hover {
-    transform: perspective(900px) rotateY(0deg) translateZ(20px);
+    transform: translateY(-8px);
     box-shadow: 0 30px 60px rgba($secondary, 0.35);
   }
 
-  @media (max-width: 768px) { width: 260px; }
+  @media (max-width: 768px) {
+    width: 260px;
+  }
 }
 
-/* ==========================================
-   FOUNDER SECTION
-========================================== */
 .about-founder {
   padding: 5rem 1.5rem;
   background: $light-bg;
@@ -137,9 +120,6 @@ $light-text: #FFFFFF;
   }
 }
 
-/* ==========================================
-   MISSION SECTION — GOLD CARDS
-========================================== */
 .about-mission {
   background: linear-gradient(135deg, #faf8f3 0%, #f5f1e8 50%, #faf8f3 100%);
   padding: 6rem 1.5rem;
@@ -156,7 +136,6 @@ $light-text: #FFFFFF;
     background: radial-gradient(circle, rgba($primary, 0.08), transparent 70%);
     border-radius: 50%;
     filter: blur(120px);
-    animation: float-slow 25s ease-in-out infinite;
     z-index: 0;
   }
 }
@@ -189,12 +168,12 @@ $light-text: #FFFFFF;
   border-radius: 20px;
   padding: 2.5rem 2rem;
   text-align: center;
-  transition: all 0.45s ease;
-  transform-style: preserve-3d;
+  transition: transform 0.4s ease, border-color 0.4s ease,
+              box-shadow 0.4s ease, background 0.4s ease;
   box-shadow: 0 12px 28px rgba($secondary, 0.08);
 
   &:hover {
-    transform: translateY(-10px) translateZ(15px);
+    transform: translateY(-10px);
     border-color: rgba($primary, 0.35);
     box-shadow: 0 20px 40px rgba($secondary, 0.15);
     background: rgba($primary, 0.08);
@@ -207,7 +186,9 @@ $light-text: #FFFFFF;
     transition: transform 0.3s ease;
   }
 
-  &:hover i { transform: translateZ(20px) scale(1.2); }
+  &:hover i {
+    transform: scale(1.2);
+  }
 
   h3 {
     font-size: 1.3rem;
@@ -223,9 +204,6 @@ $light-text: #FFFFFF;
   }
 }
 
-/* ==========================================
-   METHOD SECTION — DARK CARDS
-========================================== */
 .about-method {
   padding: 6rem 1.5rem;
   background: $dark-bg;
@@ -256,7 +234,7 @@ $light-text: #FFFFFF;
   border: 1px solid rgba($primary, 0.25);
   border-radius: 18px;
   padding: 2rem;
-  transition: all 0.45s ease;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 
   span {
     font-size: 2rem;
@@ -268,13 +246,10 @@ $light-text: #FFFFFF;
 
   &:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
   }
 }
 
-/* ==========================================
-   PROOF / DISTINCTIONS — GOLD CARDS
-========================================== */
 .about-proof {
   padding: 6rem 1.5rem;
   background: linear-gradient(135deg, #faf8f3 0%, #f5f1e8 50%, #faf8f3 100%);
@@ -317,7 +292,7 @@ $light-text: #FFFFFF;
   border-radius: 20px;
   padding: 2.5rem 2rem;
   text-align: center;
-  transition: all 0.45s ease;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
 
   &:hover {
     transform: translateY(-12px);
@@ -357,9 +332,6 @@ $light-text: #FFFFFF;
   }
 }
 
-/* ==========================================
-   CTA SECTION
-========================================== */
 .about-cta {
   padding: 5rem 1.5rem;
   text-align: center;
@@ -385,7 +357,7 @@ $light-text: #FFFFFF;
     font-weight: 600;
     cursor: pointer;
     text-decoration: none;
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease, background 0.3s ease;
 
     &:hover {
       background: darken($primary, 10%);
@@ -394,11 +366,10 @@ $light-text: #FFFFFF;
   }
 }
 
-/* ==========================================
-   RESPONSIVE & REDUCED MOTION
-========================================== */
 @media (max-width: 768px) {
-  .mission-grid, .proof-grid, .method-steps {
+  .mission-grid,
+  .proof-grid,
+  .method-steps {
     grid-template-columns: 1fr;
   }
 }

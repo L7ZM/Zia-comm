@@ -550,3 +550,12 @@ $light-text: #FFFFFF;
     transform: translateY(0);
   }
 }
+
+// ADD at the bottom of training.component.scss
+.training-grid {
+  min-height: 400px;
+}
+
+.training-loader {
+  min-height: 400px;
+}

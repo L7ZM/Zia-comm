@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-services',
@@ -11,13 +10,12 @@ import { Observable } from 'rxjs';
   imports: [CommonModule, TranslateModule],
 })
 export class ServicesComponent {
-  services$!: Observable<any[]>;
+  services: any[] = [];
   currentLang!: string;
 
   constructor(private translate: TranslateService) {
     this.currentLang = this.translate.currentLang || 'fr';
     this.loadServices();
-
     this.translate.onLangChange.subscribe(e => {
       this.currentLang = e.lang;
       this.loadServices();
@@ -25,6 +23,6 @@ export class ServicesComponent {
   }
 
   private loadServices(): void {
-    this.services$ = this.translate.get('SERVICES.ITEMS');
+    this.services = this.translate.instant('SERVICES.ITEMS');
   }
 }
