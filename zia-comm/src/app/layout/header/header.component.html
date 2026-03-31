@@ -1,9 +1,14 @@
-<!-- HTML Template -->
 <header class="header" [class.scrolled]="isScrolled">
   <div class="nav-container">
     <!-- Logo -->
     <a routerLink="/" class="nav-logo">
-      <img src="assets/Pictures/logo.jpg" alt="Zia Comm Logo" />
+      <img
+        src="assets/Pictures/logo.jpg"
+        alt="Zia Comm Logo"
+        width="60"
+        height="60"
+        loading="eager"
+      />
     </a>
 
     <!-- Navigation Menu -->
@@ -13,46 +18,39 @@
         routerLinkActive="active-link"
         [routerLinkActiveOptions]="{ exact: true }"
         (click)="closeMenu()"
-      >
-        {{ "HEADER.HOME" | translate }}
-      </a>
+      >{{ "HEADER.HOME" | translate }}</a>
+
       <a
         routerLink="/training"
         routerLinkActive="active-link"
         (click)="closeMenu()"
-      >
-        {{ "HEADER.TRAINING" | translate }}
-      </a>
+      >{{ "HEADER.TRAINING" | translate }}</a>
+
       <a
         routerLink="/services"
         routerLinkActive="active-link"
         (click)="closeMenu()"
-      >
-        {{ "HEADER.SERVICES" | translate }}
-      </a>
+      >{{ "HEADER.SERVICES" | translate }}</a>
+
       <a
         routerLink="/clients"
         routerLinkActive="active-link"
         (click)="closeMenu()"
-      >
-        {{ "HEADER.CLIENTS" | translate }}
-      </a>
+      >{{ "HEADER.CLIENTS" | translate }}</a>
+
       <a
         routerLink="/about"
         routerLinkActive="active-link"
         (click)="closeMenu()"
-      >
-        {{ "HEADER.ABOUT" | translate }}
-      </a>
+      >{{ "HEADER.ABOUT" | translate }}</a>
+
       <a
         routerLink="/contact"
         routerLinkActive="active-link"
         (click)="closeMenu()"
-      >
-        {{ "HEADER.CONTACT" | translate }}
-      </a>
+      >{{ "HEADER.CONTACT" | translate }}</a>
 
-      <!-- Language Switcher - Mobile (Inside Menu) -->
+      <!-- Language Switcher - Mobile -->
       <div class="lang-switcher mobile-lang">
         <div class="lang-options">
           <button
@@ -60,7 +58,7 @@
             [class.active]="currentLang === 'fr'"
             (click)="switchLanguage('fr'); closeMenu()"
           >
-            <img src="assets/Pictures/FR.webp" alt="FR" />
+            <img src="assets/Pictures/FR.webp" alt="Français" width="24" height="16" loading="lazy"/>
             <span>FR</span>
           </button>
           <button
@@ -68,7 +66,7 @@
             [class.active]="currentLang === 'ar'"
             (click)="switchLanguage('ar'); closeMenu()"
           >
-            <img src="assets/Pictures/MAR.webp" alt="AR" />
+            <img src="assets/Pictures/MAR.webp" alt="العربية" width="24" height="16" loading="lazy"/>
             <span>AR</span>
           </button>
           <button
@@ -76,16 +74,13 @@
             [class.active]="currentLang === 'en'"
             (click)="switchLanguage('en'); closeMenu()"
           >
-            <img src="assets/Pictures/EN.webp" alt="EN" />
+            <img src="assets/Pictures/EN.webp" alt="English" width="24" height="16" loading="lazy"/>
             <span>EN</span>
           </button>
         </div>
       </div>
 
-      <!-- Social Icons (visible in mobile menu) -->
-      <div class="nav-social">
-        <!-- Add your social icons here -->
-      </div>
+      <div class="nav-social"></div>
     </nav>
 
     <!-- Language Switcher - Desktop -->
@@ -96,7 +91,7 @@
           [class.active]="currentLang === 'en'"
           (click)="switchLanguage('en')"
         >
-          <img src="assets/Pictures/EN.webp" alt="EN" />
+          <img src="assets/Pictures/EN.webp" alt="English" width="24" height="16" loading="lazy"/>
           <span>EN</span>
         </button>
         <button
@@ -104,7 +99,7 @@
           [class.active]="currentLang === 'fr'"
           (click)="switchLanguage('fr')"
         >
-          <img src="assets/Pictures/FR.webp" alt="FR" />
+          <img src="assets/Pictures/FR.webp" alt="Français" width="24" height="16" loading="lazy"/>
           <span>FR</span>
         </button>
         <button
@@ -112,7 +107,7 @@
           [class.active]="currentLang === 'ar'"
           (click)="switchLanguage('ar')"
         >
-          <img src="assets/Pictures/MAR.webp" alt="AR" />
+          <img src="assets/Pictures/MAR.webp" alt="العربية" width="24" height="16" loading="lazy"/>
           <span>AR</span>
         </button>
       </div>

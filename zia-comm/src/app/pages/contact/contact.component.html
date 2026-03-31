@@ -12,43 +12,38 @@
         <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
           <!-- Name -->
           <div class="form-group">
-            <label>{{ "CONTACT.FORM.NAME" | translate }}</label>
+            <label for="name">{{ "CONTACT.FORM.NAME" | translate }}</label>
             <input
+              id="name"
               type="text"
               formControlName="name"
               placeholder="{{ 'CONTACT.FORM.NAME_PLACEHOLDER' | translate }}"
             />
             <div
               class="error"
-              *ngIf="
-                contactForm.get('name')?.touched &&
-                contactForm.get('name')?.invalid
-              "
+              *ngIf="contactForm.get('name')?.touched && contactForm.get('name')?.invalid"
             >
               <span *ngIf="contactForm.get('name')?.errors?.['required']">{{
                 "CONTACT.FORM.VALIDATION.NAME_REQUIRED" | translate
               }}</span>
               <span *ngIf="contactForm.get('name')?.errors?.['minlength']">{{
-                "CONTACT.FORM.VALIDATION.NAME_MINLENGTH"
-                  | translate : { min: 2 }
+                "CONTACT.FORM.VALIDATION.NAME_MINLENGTH" | translate: { min: 2 }
               }}</span>
             </div>
           </div>
 
           <!-- Email -->
           <div class="form-group">
-            <label>{{ "CONTACT.FORM.EMAIL" | translate }}</label>
+            <label for="email">{{ "CONTACT.FORM.EMAIL" | translate }}</label>
             <input
+              id="email"
               type="email"
               formControlName="email"
               placeholder="{{ 'CONTACT.FORM.EMAIL_PLACEHOLDER' | translate }}"
             />
             <div
               class="error"
-              *ngIf="
-                contactForm.get('email')?.touched &&
-                contactForm.get('email')?.invalid
-              "
+              *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.invalid"
             >
               <span *ngIf="contactForm.get('email')?.errors?.['required']">{{
                 "CONTACT.FORM.VALIDATION.EMAIL_REQUIRED" | translate
@@ -61,46 +56,39 @@
 
           <!-- Subject -->
           <div class="form-group">
-            <label>{{ "CONTACT.FORM.SUBJECT" | translate }}</label>
+            <label for="subject">{{ "CONTACT.FORM.SUBJECT" | translate }}</label>
             <input
+              id="subject"
               type="text"
               formControlName="subject"
               placeholder="{{ 'CONTACT.FORM.SUBJECT_PLACEHOLDER' | translate }}"
             />
             <div
               class="error"
-              *ngIf="
-                contactForm.get('subject')?.touched &&
-                contactForm.get('subject')?.invalid
-              "
+              *ngIf="contactForm.get('subject')?.touched && contactForm.get('subject')?.invalid"
             >
-              <span>{{
-                "CONTACT.FORM.VALIDATION.SUBJECT_REQUIRED" | translate
-              }}</span>
+              <span>{{ "CONTACT.FORM.VALIDATION.SUBJECT_REQUIRED" | translate }}</span>
             </div>
           </div>
 
           <!-- Message -->
           <div class="form-group">
-            <label>{{ "CONTACT.FORM.MESSAGE" | translate }}</label>
+            <label for="message">{{ "CONTACT.FORM.MESSAGE" | translate }}</label>
             <textarea
+              id="message"
               rows="5"
               formControlName="message"
               placeholder="{{ 'CONTACT.FORM.MESSAGE_PLACEHOLDER' | translate }}"
             ></textarea>
             <div
               class="error"
-              *ngIf="
-                contactForm.get('message')?.touched &&
-                contactForm.get('message')?.invalid
-              "
+              *ngIf="contactForm.get('message')?.touched && contactForm.get('message')?.invalid"
             >
               <span *ngIf="contactForm.get('message')?.errors?.['required']">{{
                 "CONTACT.FORM.VALIDATION.MESSAGE_REQUIRED" | translate
               }}</span>
               <span *ngIf="contactForm.get('message')?.errors?.['minlength']">{{
-                "CONTACT.FORM.VALIDATION.MESSAGE_MINLENGTH"
-                  | translate : { min: 10 }
+                "CONTACT.FORM.VALIDATION.MESSAGE_MINLENGTH" | translate: { min: 10 }
               }}</span>
             </div>
           </div>
@@ -118,10 +106,11 @@
 
       <!-- Contact Info -->
       <div class="contact-info">
-        <h3>{{ "CONTACT.INFO.TITLE" | translate }}</h3>
+        <h2>{{ "CONTACT.INFO.TITLE" | translate }}</h2>
+
         <div class="info-item">
           <i class="fas fa-envelope"></i>
-          <a class="info-link" href="mailto:automaestro.contact@gmail.com" target="_blank">
+          <a class="info-link" href="mailto:automaestro.contact@gmail.com">
             {{ "CONTACT.INFO.EMAIL" | translate }}
           </a>
         </div>
@@ -140,16 +129,23 @@
           <a
             href="https://api.whatsapp.com/send/?phone=212615603461&text&type=phone_number&app_absent=0"
             target="_blank"
-            ><i class="fab fa-whatsapp"></i
-          ></a>
+            rel="noopener"
+            aria-label="WhatsApp"
+          ><i class="fab fa-whatsapp"></i></a>
+
           <a
             href="https://www.linkedin.com/in/fouzia-azmi-6b7870199/"
             target="_blank"
-            ><i class="fab fa-linkedin"></i
-          ></a>
-          <a href="https://www.instagram.com/azmi_fouzia/" target="_blank"
-            ><i class="fab fa-instagram"></i
-          ></a>
+            rel="noopener"
+            aria-label="LinkedIn"
+          ><i class="fab fa-linkedin"></i></a>
+
+          <a
+            href="https://www.instagram.com/azmi_fouzia/"
+            target="_blank"
+            rel="noopener"
+            aria-label="Instagram"
+          ><i class="fab fa-instagram"></i></a>
         </div>
       </div>
     </div>

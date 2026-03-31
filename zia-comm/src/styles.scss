@@ -13,11 +13,15 @@ img {
   display: block;
 }
 
-
 .fas, .fab {
   display: inline-block;
   min-width: 1em;
   height: 1em;
+}
+
+/* ADD THIS — prevents font shifts causing CLS */
+* {
+  font-display: optional;
 }
 
 @media (max-width: 768px) {
