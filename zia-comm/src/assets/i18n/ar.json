@@ -255,38 +255,41 @@
   },
 
 
-  "CONTACT": {
+"CONTACT": {
   "TITLE": "تواصل معنا",
-  "SUBTITLE": "هل لديك سؤال أو مشروع أو تعاون؟ يسعدني التحدث معك ومساعدتك في التحول الرقمي.",
+  "SUBTITLE": "سؤال، مشروع، أو تعاون؟ يسعدني التواصل معك.",
   "FORM": {
     "NAME": "الاسم الكامل",
-    "NAME_PLACEHOLDER": "ادخل اسمك",
+    "NAME_PLACEHOLDER": "اسمك",
     "EMAIL": "البريد الإلكتروني",
-    "EMAIL_PLACEHOLDER": "ادخل بريدك الإلكتروني",
+    "EMAIL_PLACEHOLDER": "بريدك الإلكتروني",
     "SUBJECT": "الموضوع",
     "SUBJECT_PLACEHOLDER": "موضوع رسالتك",
     "MESSAGE": "الرسالة",
-    "MESSAGE_PLACEHOLDER": "اكتب رسالتك هنا...",
+    "MESSAGE_PLACEHOLDER": "رسالتك...",
     "SUBMIT": "إرسال الرسالة",
-    "SUCCESS": "تم الإرسال!",
+    "SENDING": "جارٍ الإرسال...",
+    "SUCCESS": "تم إرسال الرسالة بنجاح!",
+    "ERROR": "فشل الإرسال. يرجى المحاولة مجدداً.",
     "VALIDATION": {
-        "NAME_REQUIRED": "الاسم مطلوب",
-        "NAME_MINLENGTH": "يجب أن يحتوي الاسم على {{min}} أحرف على الأقل",
-        "EMAIL_REQUIRED": "البريد الإلكتروني مطلوب",
-        "EMAIL_INVALID": "يرجى إدخال بريد إلكتروني صالح",
-        "SUBJECT_REQUIRED": "الموضوع مطلوب",
-        "MESSAGE_REQUIRED": "الرسالة مطلوبة",
-        "MESSAGE_MINLENGTH": "يجب أن تحتوي الرسالة على {{min}} أحرف على الأقل"
-      }
+      "NAME_REQUIRED": "الاسم مطلوب",
+      "NAME_MINLENGTH": "يجب أن يحتوي الاسم على {{min}} أحرف على الأقل",
+      "EMAIL_REQUIRED": "البريد الإلكتروني مطلوب",
+      "EMAIL_INVALID": "يرجى إدخال بريد إلكتروني صحيح",
+      "SUBJECT_REQUIRED": "الموضوع مطلوب",
+      "MESSAGE_REQUIRED": "الرسالة مطلوبة",
+      "MESSAGE_MINLENGTH": "يجب أن تحتوي الرسالة على {{min}} أحرف على الأقل"
+    }
   },
   "INFO": {
-    "TITLE": "المعلومات",
-    "EMAIL": "contact@ziacomm.com",
-    "PHONE": "+212 6 00 00 00 00",
-    "LOCATION": "الدار البيضاء، المغرب"
+    "TITLE": "معلومات التواصل",
+    "EMAIL": "automaestro.contact@gmail.com",
+    "PHONE": "+212 615 603 461",
+    "PHONE_LABEL": "الهاتف",
+    "LOCATION": "المغرب",
+    "LOCATION_LABEL": "الموقع"
   }
 },
-
 
   "WHATSAPP": {
     "chatNow": "تحدث الآن"

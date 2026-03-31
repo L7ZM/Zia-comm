@@ -227,37 +227,41 @@
   "NO_TRAININGS": "No scheduled trainings at the moment."
 }
 ,
-  "CONTACT": {
-    "TITLE": "Let's get in touch",
-    "SUBTITLE": "A question, project, collaboration? Happy to chat.",
-    "FORM": {
-      "NAME": "Full name",
-      "NAME_PLACEHOLDER": "Your name",
-      "EMAIL": "Email",
-      "EMAIL_PLACEHOLDER": "Your email",
-      "SUBJECT": "Subject",
-      "SUBJECT_PLACEHOLDER": "Message subject",
-      "MESSAGE": "Message",
-      "MESSAGE_PLACEHOLDER": "Your message...",
-      "SUBMIT": "Send the message",
-      "SUCCESS": "Sent",
-      "VALIDATION": {
-        "NAME_REQUIRED": "Name required",
-        "NAME_MINLENGTH": "Name at least {{min}} chars",
-        "EMAIL_REQUIRED": "Email required",
-        "EMAIL_INVALID": "Valid email please",
-        "SUBJECT_REQUIRED": "Subject required",
-        "MESSAGE_REQUIRED": "Message required",
-        "MESSAGE_MINLENGTH": "Message at least {{min}} chars"
-      }
-    },
-    "INFO": {
-      "TITLE": "Information",
-      "EMAIL": "contact@ziacomm.com",
-      "PHONE": "+212 6 00 00 00 00",
-      "LOCATION": "Casablanca, Morocco"
+"CONTACT": {
+  "TITLE": "Get in Touch",
+  "SUBTITLE": "A question, a project, a collaboration? I would be happy to connect with you.",
+  "FORM": {
+    "NAME": "Full Name",
+    "NAME_PLACEHOLDER": "Your name",
+    "EMAIL": "Email",
+    "EMAIL_PLACEHOLDER": "Your email",
+    "SUBJECT": "Subject",
+    "SUBJECT_PLACEHOLDER": "Subject of your message",
+    "MESSAGE": "Message",
+    "MESSAGE_PLACEHOLDER": "Your message...",
+    "SUBMIT": "Send Message",
+    "SENDING": "Sending...",
+    "SUCCESS": "Message sent successfully!",
+    "ERROR": "Failed to send. Please try again.",
+    "VALIDATION": {
+      "NAME_REQUIRED": "Name is required",
+      "NAME_MINLENGTH": "Name must be at least {{min}} characters",
+      "EMAIL_REQUIRED": "Email is required",
+      "EMAIL_INVALID": "Please enter a valid email",
+      "SUBJECT_REQUIRED": "Subject is required",
+      "MESSAGE_REQUIRED": "Message is required",
+      "MESSAGE_MINLENGTH": "Message must be at least {{min}} characters"
     }
   },
+  "INFO": {
+    "TITLE": "Contact Information",
+    "EMAIL": "automaestro.contact@gmail.com",
+    "PHONE": "+212 615 603 461",
+    "PHONE_LABEL": "Phone",
+    "LOCATION": "Morocco",
+    "LOCATION_LABEL": "Location"
+  }
+},
   "WHATSAPP": {
     "chatNow": "Chat now",
     "greeting": "Hello! I would like to chat.",

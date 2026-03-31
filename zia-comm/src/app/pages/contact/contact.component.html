@@ -1,5 +1,6 @@
 <section class="contact-hero" [dir]="currentLang === 'ar' ? 'rtl' : 'ltr'">
   <div class="contact-container">
+
     <!-- Header -->
     <div class="contact-header">
       <h1>{{ "CONTACT.TITLE" | translate }}</h1>
@@ -7,9 +8,11 @@
     </div>
 
     <div class="contact-grid">
+
       <!-- Contact Form -->
       <div class="contact-form">
         <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+
           <!-- Name -->
           <div class="form-group">
             <label for="name">{{ "CONTACT.FORM.NAME" | translate }}</label>
@@ -19,10 +22,7 @@
               formControlName="name"
               placeholder="{{ 'CONTACT.FORM.NAME_PLACEHOLDER' | translate }}"
             />
-            <div
-              class="error"
-              *ngIf="contactForm.get('name')?.touched && contactForm.get('name')?.invalid"
-            >
+            <div class="error" *ngIf="contactForm.get('name')?.touched && contactForm.get('name')?.invalid">
               <span *ngIf="contactForm.get('name')?.errors?.['required']">{{
                 "CONTACT.FORM.VALIDATION.NAME_REQUIRED" | translate
               }}</span>
@@ -41,10 +41,7 @@
               formControlName="email"
               placeholder="{{ 'CONTACT.FORM.EMAIL_PLACEHOLDER' | translate }}"
             />
-            <div
-              class="error"
-              *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.invalid"
-            >
+            <div class="error" *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.invalid">
               <span *ngIf="contactForm.get('email')?.errors?.['required']">{{
                 "CONTACT.FORM.VALIDATION.EMAIL_REQUIRED" | translate
               }}</span>
@@ -63,10 +60,7 @@
               formControlName="subject"
               placeholder="{{ 'CONTACT.FORM.SUBJECT_PLACEHOLDER' | translate }}"
             />
-            <div
-              class="error"
-              *ngIf="contactForm.get('subject')?.touched && contactForm.get('subject')?.invalid"
-            >
+            <div class="error" *ngIf="contactForm.get('subject')?.touched && contactForm.get('subject')?.invalid">
               <span>{{ "CONTACT.FORM.VALIDATION.SUBJECT_REQUIRED" | translate }}</span>
             </div>
           </div>
@@ -80,10 +74,7 @@
               formControlName="message"
               placeholder="{{ 'CONTACT.FORM.MESSAGE_PLACEHOLDER' | translate }}"
             ></textarea>
-            <div
-              class="error"
-              *ngIf="contactForm.get('message')?.touched && contactForm.get('message')?.invalid"
-            >
+            <div class="error" *ngIf="contactForm.get('message')?.touched && contactForm.get('message')?.invalid">
               <span *ngIf="contactForm.get('message')?.errors?.['required']">{{
                 "CONTACT.FORM.VALIDATION.MESSAGE_REQUIRED" | translate
               }}</span>
@@ -93,14 +84,28 @@
             </div>
           </div>
 
+<!-- Success -->
+<div class="form-feedback success" *ngIf="submitSuccess">
+  <span class="feedback-icon"><i class="fas fa-check-circle"></i></span>
+  {{ 'CONTACT.FORM.SUCCESS' | translate }}
+</div>
+
+<!-- Error -->
+<div class="form-feedback error-msg" *ngIf="submitError">
+  <span class="feedback-icon"><i class="fas fa-exclamation-circle"></i></span>
+  {{ 'CONTACT.FORM.ERROR' | translate }}
+</div>
+
           <!-- Submit Button -->
           <button
             type="submit"
             class="btn-primary"
-            [disabled]="contactForm.invalid"
+            [disabled]="isSubmitting"
           >
-            {{ "CONTACT.FORM.SUBMIT" | translate }}
+            <span *ngIf="!isSubmitting">{{ "CONTACT.FORM.SUBMIT" | translate }}</span>
+            <span *ngIf="isSubmitting">⏳ {{ "CONTACT.FORM.SENDING" | translate }}</span>
           </button>
+
         </form>
       </div>
 
@@ -148,6 +153,7 @@
           ><i class="fab fa-instagram"></i></a>
         </div>
       </div>
+
     </div>
   </div>
 </section>

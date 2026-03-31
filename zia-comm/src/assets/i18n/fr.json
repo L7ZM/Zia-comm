@@ -254,9 +254,9 @@
   },
 
 
-  "CONTACT": {
+"CONTACT": {
   "TITLE": "Entrons en contact",
-  "SUBTITLE": "Une question, un projet, une collaboration ? Je serai ravie d’échanger avec vous.",
+  "SUBTITLE": "Une question, un projet, une collaboration ? Je serai ravie d'échanger avec vous.",
   "FORM": {
     "NAME": "Nom complet",
     "NAME_PLACEHOLDER": "Votre nom",
@@ -267,25 +267,28 @@
     "MESSAGE": "Message",
     "MESSAGE_PLACEHOLDER": "Votre message...",
     "SUBMIT": "Envoyer le message",
-    "SUCCESS": "Envoyé",
+    "SENDING": "Envoi en cours...",
+    "SUCCESS": "Message envoyé avec succès !",
+    "ERROR": "Échec de l'envoi. Veuillez réessayer.",
     "VALIDATION": {
-        "NAME_REQUIRED": "Le nom est requis",
-        "NAME_MINLENGTH": "Le nom doit contenir au moins {{min}} caractères",
-        "EMAIL_REQUIRED": "L'email est requis",
-        "EMAIL_INVALID": "Veuillez entrer un email valide",
-        "SUBJECT_REQUIRED": "Le sujet est requis",
-        "MESSAGE_REQUIRED": "Le message est requis",
-        "MESSAGE_MINLENGTH": "Le message doit contenir au moins {{min}} caractères"
-      }
+      "NAME_REQUIRED": "Le nom est requis",
+      "NAME_MINLENGTH": "Le nom doit contenir au moins {{min}} caractères",
+      "EMAIL_REQUIRED": "L'email est requis",
+      "EMAIL_INVALID": "Veuillez entrer un email valide",
+      "SUBJECT_REQUIRED": "Le sujet est requis",
+      "MESSAGE_REQUIRED": "Le message est requis",
+      "MESSAGE_MINLENGTH": "Le message doit contenir au moins {{min}} caractères"
+    }
   },
   "INFO": {
-    "TITLE": "Informations",
-    "EMAIL": "contact@ziacomm.com",
-    "PHONE": "+212 6 00 00 00 00",
-    "LOCATION": "Casablanca, Maroc"
+    "TITLE": "Informations de contact",
+    "EMAIL": "automaestro.contact@gmail.com",
+    "PHONE": "+212 615 603 461",
+    "PHONE_LABEL": "Téléphone",
+    "LOCATION": "Maroc",
+    "LOCATION_LABEL": "Localisation"
   }
 },
-
 
   "WHATSAPP": {
     "chatNow": "Discutez maintenant"
